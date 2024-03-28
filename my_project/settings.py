@@ -39,6 +39,7 @@ ALLOWED_HOSTS = ['8000-ikayherce-debbiesblog-6l8jg7btuxf.ws-eu110.gitpod.io','.h
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles', 
+    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'django_summernote',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
