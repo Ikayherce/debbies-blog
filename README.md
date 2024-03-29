@@ -39,7 +39,7 @@ Table of contents
     Elephant SQL - used as the database
     Font Awesome - for social media icons
     Google Fonts- currently only for the hero image font
-    GitHub - for storing the code and for the projects Kanban
+    GitHub - for storing the code and for the project's Kanban board
     Heroku - for hosting and deployement of this project
     Cloudinary - hosting the static files
     Git - version control tool  
@@ -55,3 +55,8 @@ Table of contents
 8. Deployment
 9. Resources
 10. Credits and acknowledgements
+    - "I think therefore I blog" walkthrough project by Code Institute.
+    - Readme inspired in this project : https://github.com/TulaUnogi/cat-beans-cafe/blob/main/README.md
+    - Recipe pictures and about pictures: unsplash
+    
+
