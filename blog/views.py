@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic
+from django.views import generic 
+from django.views.generic import CreateView   #test line 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
@@ -31,10 +32,6 @@ def post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
-    liked = False #test code for like function
-
-    if request.user.is_authenticated:   #test code for like function
-        liked = Like.objects.filter(user=request.user, post=post).exists()   #test code for like function
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -58,8 +55,6 @@ def post_detail(request, slug):
         "comments": comments,
         "comment_count": comment_count,
         "comment_form": comment_form,
-        "liked": liked,  #test code for like function
-
     },
 )
 
@@ -102,3 +97,10 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+#new code, test
+class AddPostView(CreateView):
+    model = Post 
+    template_name = 'add_new_post.html'
+    fields = '__all__'
