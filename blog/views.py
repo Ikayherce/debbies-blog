@@ -5,9 +5,17 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
+from django.urls import reverse_lazy, reverse  #test line
 
 
 # Create your views here.
+#this below is test code for like view
+def LikeView(request, pk): 
+    post = get_object_or_404(Post, id=pk)
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post_detail', args=[post.slug]))
+    
+
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
@@ -15,6 +23,8 @@ class PostList(generic.ListView):
 
 
 def post_detail(request, slug):
+
+
     """
     Display an individual :model:`blog.Post`.
 
@@ -46,6 +56,7 @@ def post_detail(request, slug):
             )
 
     comment_form = CommentForm()
+
 
     return render(
     request,
@@ -99,7 +110,7 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-#new code, test
+
 class AddPostView(CreateView):
     model = Post 
     template_name = 'add_new_post.html'

@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import AddPostView
+from .views import AddPostView, LikeView
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
@@ -10,5 +10,6 @@ urlpatterns = [
         views.comment_edit, name='comment_edit'),
     path('<slug:slug>/delete_comment/<int:comment_id>',
          views.comment_delete, name='comment_delete'),
+    path('like/<int:pk>', LikeView, name='like_post'),  #test code for like functionality 
     
 ]

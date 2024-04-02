@@ -58,6 +58,7 @@ Table of contents
     - "I think therefore I blog" walkthrough project by Code Institute.
     - Readme inspired in this project : https://github.com/TulaUnogi/cat-beans-cafe/blob/main/README.md
     - Recipe pictures and about pictures: unsplash
-    - Tutorial for "add new post" view https://www.youtube.com/watch?v=m3efqF9abyg 
+    - Tutorial to add new post page  https://www.youtube.com/watch?v=m3efqF9abyg 
+    - Tutorial to like button https://www.youtube.com/watch?v=PXqRPqDjDgc 
     
 

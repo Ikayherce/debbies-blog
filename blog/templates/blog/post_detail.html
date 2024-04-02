@@ -37,6 +37,17 @@
             </div>
         </div>
     </div>
+<br/><br/>
+<hr>
+<br/>
+<form action="{% url 'like_post' pk=post.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-sm">Like</button>
+</form>
+<!-- End of test code for like button -->
+<p>Total Likes: {{ post.total_likes }}</p> <!--test to display likes-->
+
+
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
@@ -115,5 +126,6 @@
 {% endblock content %}
 
 {% block extras %}
+
 <script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
