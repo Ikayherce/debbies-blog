@@ -40,12 +40,26 @@
 <br/><br/>
 <hr>
 <br/>
+<!-- test code for like button 
 <form action="{% url 'like_post' pk=post.pk %}" method="POST">
     {% csrf_token %}
     <button type="submit" class="btn btn-primary btn-sm">Like</button>
 </form>
-<!-- End of test code for like button -->
-<p>Total Likes: {{ post.total_likes }}</p> <!--test to display likes-->
+
+<p>Total Likes: {{ post.total_likes }}</p> end test to display likes-->
+
+<!-- Like/Unlike button -->
+<form action="{% url 'like_post' pk=post.pk %}" method="POST">
+    {% csrf_token %}
+    {% if user in post.likes.all %}
+        <button type="submit" class="btn btn-secondary btn-sm">Unlike</button>
+    {% else %}
+        <button type="submit" class="btn btn-primary btn-sm">Like</button>
+    {% endif %}
+</form>
+<p>Total Likes: {{ post.total_likes }}</p>
+
+<!-- Rest of your template -->
 
 
     <div class="row">

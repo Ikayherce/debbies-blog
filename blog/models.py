@@ -6,6 +6,19 @@ from django.urls import reverse #test
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
+#code below is test code for category model
+class Category (models.Model):
+    name = models.CharField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):                   
+        return reverse('home')  
+
+#end of test code for category model
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -18,10 +31,11 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    likes = models.ManyToManyField(User, related_name='liked_posts') #test code for likes
+    likes = models.ManyToManyField(User, related_name='liked_posts') # code for likes
+    category =  models.ForeignKey(Category, on_delete=models.CASCADE) #test code for categories
 
-    def total_likes(self):          #test code to display likes 
-        return self.likes.count()    #test code to display likes 
+    def total_likes(self):          # code to display likes 
+        return self.likes.count()    # code to display likes 
 
     class Meta: 
         ordering = ["-created_on"]
@@ -29,7 +43,7 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
-    def get_absolute_url(self): #test 
+    def get_absolute_url(self):   
         #return reverse('post_detail', kwargs={'slug': self.slug})   #redirect to post                  
         return reverse('home') #or redirect home?
 

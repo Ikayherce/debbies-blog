@@ -10,9 +10,23 @@ from django.urls import reverse_lazy, reverse  #test line
 
 # Create your views here.
 #this below is test code for like view
-def LikeView(request, pk): 
+#def LikeView(request, pk): 
+#    post = get_object_or_404(Post, id=pk)
+#    post.likes.add(request.user)
+#    return HttpResponseRedirect(reverse('post_detail', args=[post.slug]))
+
+def LikeView(request, pk):
     post = get_object_or_404(Post, id=pk)
-    post.likes.add(request.user)
+    
+    # Check if the post is already liked by the user
+    if post.likes.filter(id=request.user.id).exists():
+        # User has already liked this post, so unlike it
+        post.likes.remove(request.user)
+    else:
+        # User has not liked this post yet, so like it
+        post.likes.add(request.user)
+    
+    # Redirect to the post's detail page
     return HttpResponseRedirect(reverse('post_detail', args=[post.slug]))
     
 
