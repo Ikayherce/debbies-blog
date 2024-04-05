@@ -4,7 +4,7 @@ from django.views.generic import CreateView   #test line
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.urls import reverse_lazy, reverse  #test line
 
 
@@ -127,5 +127,6 @@ def comment_delete(request, slug, comment_id):
 
 class AddPostView(CreateView):
     model = Post 
+    form_class = PostForm #testcode
     template_name = 'add_new_post.html'
-    fields = '__all__'
+   # fields = '__all__'

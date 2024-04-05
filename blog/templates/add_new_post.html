@@ -5,11 +5,13 @@
 
 <h1>Create new post...</h1>
 <br/><br/>
-<form method="POST">
+<div class="form-group"> <!--this line of code and the closing tag </div> are test code to style form vid #5-->
+ <form method="POST">
 
-    {% csrf_token %}
-    {{ form.as_p }}
-    <br>
-    <button class="btn btn-outline-secondary">Post</button>
-    <br/><br/>
-{% endblock %}
+     {% csrf_token %}
+     {{ form.as_p }}
+     <br>
+     <button class="btn btn-outline-secondary">Post</button>
+     <br/><br/>
+ {% endblock %}
+</div>
