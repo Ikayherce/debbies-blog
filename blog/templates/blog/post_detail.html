@@ -40,14 +40,11 @@
 <br/><br/>
 <hr>
 <br/>
-<!-- test code for like button 
-<form action="{% url 'like_post' pk=post.pk %}" method="POST">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary btn-sm">Like</button>
-</form>
 
-<p>Total Likes: {{ post.total_likes }}</p> end test to display likes-->
-
+<!--Test code for edit new post-->
+     {% if user.is_superuser %}
+            <a href="{% url 'update_post' post.pk %}">Edit post</a>
+        {% endif %} 
 <!-- Like/Unlike button -->
 <form action="{% url 'like_post' pk=post.pk %}" method="POST">
     {% csrf_token %}

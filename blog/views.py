@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic 
-from django.views.generic import CreateView   #test line 
+from django.views.generic import CreateView, UpdateView   #test line 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
@@ -124,9 +124,15 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-
 class AddPostView(CreateView):
     model = Post 
     form_class = PostForm #testcode
     template_name = 'add_new_post.html'
    # fields = '__all__'
+
+#test code for update post page
+class UpdatePostView(UpdateView): 
+    model = Post
+    form_class = PostForm #testcode
+    template_name = 'update_post.html' 
+    #fields = ['title', 'content', 'excerpt', 'category', 'featured_image', 'status']

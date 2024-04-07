@@ -60,5 +60,7 @@ Table of contents
     - Recipe pictures and about pictures: unsplash
     - Tutorial to add new post page  https://www.youtube.com/watch?v=m3efqF9abyg 
     - Tutorial to like button https://www.youtube.com/watch?v=PXqRPqDjDgc 
+    - Tutorial to style form   https://www.youtube.com/watch?v=6-XXvUENY_8
+    - Tutorial for edit form https://www.youtube.com/watch?v=J7xaESAddDQ
     
 

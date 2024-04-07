@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h1>Add new post</h1>
+<h1>Update post</h1>
 <br/><br/>
 <div class="form-group"> <!--this line of code and the closing tag </div> are test code to style form vid #5-->
  <form method="POST">
@@ -11,7 +11,7 @@
      {% csrf_token %}
      {{ form.as_p }}
      <br>
-     <button class="btn btn-outline-secondary">Post</button>
+     <button class="btn btn-outline-secondary">Update</button>
      <br/><br/>
  {% endblock %}
 </div>

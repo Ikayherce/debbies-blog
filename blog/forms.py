@@ -14,7 +14,7 @@ class PostForm(forms.ModelForm):
         fields = (
             'title',
             'content',
-            'author',
+            'author',   #this line can be commented out if only superuser is author? 
             'excerpt',
             'featured_image',
             'status',
@@ -25,7 +25,7 @@ class PostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class': 'form-control'}),
+            'author': forms.Select(attrs={'class': 'form-control'}), # can be commented out if only superuser is author? 
             'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             #'created-on': forms.TextInput(attrs={'class': 'form-control'}),
