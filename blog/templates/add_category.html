@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Add category</h1>
+<br/><br/>
+<div class="form-group">  
+ <form method="POST">
+
+     {% csrf_token %}
+     {{ form.as_p }}
+     <br>
+     <button class="btn btn-outline-secondary">Add category</button>
+     <br/><br/>
+ {% endblock %}
+</div>

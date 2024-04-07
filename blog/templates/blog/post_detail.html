@@ -41,13 +41,23 @@
 <hr>
 <br/>
 
-<!--Test code for edit new post-->
+{% comment %} 
+<!--Test code for edit new post
      {% if user.is_superuser %}
-            <a href="{% url 'update_post' post.pk %}">Edit post</a>
-            <a href="{% url 'delete_post' post.pk %}">Delete post</a>
+            <a href="{% url 'update_post' pk=post.pk %}">Edit post</a>
+            <a href="{% url 'delete_post' pk=post.pk %}">Delete post</a>
         {% endif %} 
+Like/Unlike button 
+<form action="{% url 'like_post' pk=post.pk %}" method="POST">-->
+<!-- Test code for edit new post -->
+{% endcomment %}
+
+{% if user.is_superuser %}
+    <a href="{% url 'update_post' slug=post.slug %}">Edit post</a>
+    <a href="{% url 'delete_post' slug=post.slug %}">Delete post</a>
+{% endif %}
 <!-- Like/Unlike button -->
-<form action="{% url 'like_post' pk=post.pk %}" method="POST">
+<form action="{% url 'like_post' slug=post.slug %}" method="POST">
     {% csrf_token %}
     {% if user in post.likes.all %}
         <button type="submit" class="btn btn-secondary btn-sm">Unlike</button>

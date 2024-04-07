@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse #test
+from django.utils.text import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -46,7 +47,12 @@ class Post(models.Model):
     def get_absolute_url(self):   
         #return reverse('post_detail', kwargs={'slug': self.slug})   #redirect to post                  
         return reverse('home') #or redirect home?
-
+    
+    #test code to generate slug if not specified 
+    def save(self, *args, **kwargs):
+        if not self.slug:  # Generate slug only if not provided
+            self.slug = slugify(self.title)  # Generate slug from title
+        super().save(*args, **kwargs)
 
 
 class Comment(models.Model):
