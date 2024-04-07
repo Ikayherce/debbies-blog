@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic 
-from django.views.generic import CreateView, UpdateView   #test line 
+from django.views.generic import CreateView, UpdateView, DeleteView   #test line 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
@@ -136,3 +136,8 @@ class UpdatePostView(UpdateView):
     form_class = PostForm #testcode
     template_name = 'update_post.html' 
     #fields = ['title', 'content', 'excerpt', 'category', 'featured_image', 'status']
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html' 
+    success_url = reverse_lazy('home')

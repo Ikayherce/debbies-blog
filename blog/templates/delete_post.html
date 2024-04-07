@@ -3,15 +3,17 @@
 
 {% block content %}
 
-<h1>Update post</h1>
+<h1>Delete post</h1>
 <br/><br/>
+<h3>Delete: {{ post.title }}</h3>
+
+<br/>
 <div class="form-group"> <!--this line of code and the closing tag </div> are test code to style form vid #5-->
  <form method="POST">
-
      {% csrf_token %}
-     {{ form.as_p }}
      <br>
-     <button class="btn btn-outline-secondary">Update</button>
+     <strong>Are you sure you want to delete this post? This action cannot be undone. </strong> <br/> <br/>
+     <button class="btn btn-outline-secondary">Delete</button>
      <br/><br/>
 </div>
-{% endblock %}
+ {% endblock %}

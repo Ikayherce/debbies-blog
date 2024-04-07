@@ -44,6 +44,7 @@
 <!--Test code for edit new post-->
      {% if user.is_superuser %}
             <a href="{% url 'update_post' post.pk %}">Edit post</a>
+            <a href="{% url 'delete_post' post.pk %}">Delete post</a>
         {% endif %} 
 <!-- Like/Unlike button -->
 <form action="{% url 'like_post' pk=post.pk %}" method="POST">
