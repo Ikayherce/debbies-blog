@@ -28,6 +28,8 @@ class PostForm(forms.ModelForm):
             'author': forms.Select(attrs={'class': 'form-control'}), # can be commented out if only superuser is author? 
             'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
+            'featured_image': forms.ClearableFileInput(attrs={'class': 'form-control'}),  # test, File input for image
+
             #'created-on': forms.TextInput(attrs={'class': 'form-control'}),
             #'updated-on': forms.TextInput(attrs={'class': 'form-control'}),
            
