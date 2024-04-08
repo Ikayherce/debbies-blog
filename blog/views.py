@@ -8,15 +8,8 @@ from .forms import CommentForm, PostForm
 from django.urls import reverse_lazy, reverse  #test line
 
 
-# Create your views here.
-#this below is test code for like view
-#def LikeView(request, pk): 
-#    post = get_object_or_404(Post, id=pk)
-#    post.likes.add(request.user)
-#    return HttpResponseRedirect(reverse('post_detail', args=[post.slug]))
-
-def LikeView(request, pk):
-    post = get_object_or_404(Post, id=pk)
+def LikeView(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     
     # Check if the post is already liked by the user
     if post.likes.filter(id=request.user.id).exists():
@@ -82,6 +75,37 @@ def post_detail(request, slug):
         "comment_form": comment_form,
     },
 )
+
+def CategoryView(request, cats):
+    cats_lower = cats.lower()
+    try:
+        category = Category.objects.get(name__iexact=cats_lower)
+        category_posts = Post.objects.filter(category=category)
+    except Category.DoesNotExist:
+        category_posts = Post.objects.none()  # Empty queryset
+    
+    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
+
+
+#test code below for category view
+#def CategoryView(request, cats):
+#    cats_lower = cats.lower() #test 
+#    try:
+#        category = Category.objects.get(name=cats)
+#        category_posts = Post.objects.filter(category=category)
+#    except Category.DoesNotExist:
+#        # Handle the case when the category does not exist
+#        # You can return an empty queryset or render an error page
+#        category_posts = Post.objects.none()  # Empty queryset
+    
+#    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
+
+
+
+#test code below for category view
+#def CategoryView(request, cats):
+#    category_posts = Post.objects.filter(category=cats)
+#    return render(request,'categories.html',{'cats':cats,'category_posts':category_posts})
 
 def comment_edit(request, slug, comment_id):
     """
