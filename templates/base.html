@@ -54,7 +54,16 @@
                           href="{% url 'about' %}"
                           >About</a>
                       </li>  
-                      <!--Test code for new post if user is superuser--> 
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                      </li>
+                     <!--Test code for new post if user is superuser--> 
                       {% if user.is_superuser %}
                         <li class="nav-item">
                          <a class="nav-link" href="{% url 'add_new_post' %}">Add New Post</a>

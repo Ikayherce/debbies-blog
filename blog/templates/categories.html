@@ -3,6 +3,7 @@
 
 {% block content %}
 
+
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
@@ -30,7 +31,7 @@
                                     </div>
                                     <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
                                         <h2 class="card-title">{{ post.title }}</h2>
-                                        <p class="card-text">{{ post.category }}</p>                               
+                                        <!--<p class="card-text">{{ post.category }}</p> -->                              
                                         <p class="card-text">{{ post.excerpt }}</p>
                                     </a>
                                     <!-- Test code for edit and delete new post -->
@@ -67,6 +68,8 @@
         </nav>
     {% endif %}
 </div>
+
+
 
 <!-- index.html content ends here -->
 {% endblock %}
