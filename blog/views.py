@@ -183,6 +183,11 @@ class AddCategoryView(CreateView):
     #form_class = PostForm #testcode
     template_name = 'add_category.html'
     fields = '__all__'
+    def get_context_data(self, *args, **kwargs):  
+        cat_menu = Category.objects.all()    
+        context = super( AddCategoryView,self).get_context_data(*args, **kwargs)  
+        context["cat_menu"] = cat_menu    
+        return context 
 
 
 #test code for update post page
@@ -191,9 +196,19 @@ class UpdatePostView(UpdateView):
     form_class = PostForm #testcode
     template_name = 'update_post.html' 
     #fields = ['title', 'content', 'excerpt', 'category', 'featured_image', 'status']
+    def get_context_data(self, *args, **kwargs):  
+        cat_menu = Category.objects.all()    
+        context = super( UpdatePostView,self).get_context_data(*args, **kwargs)  
+        context["cat_menu"] = cat_menu    
+        return context 
 
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html' 
     success_url = reverse_lazy('home')
+    def get_context_data(self, *args, **kwargs):  
+        cat_menu = Category.objects.all()    
+        context = super( DeletePostView,self).get_context_data(*args, **kwargs)  
+        context["cat_menu"] = cat_menu    
+        return context 
 
