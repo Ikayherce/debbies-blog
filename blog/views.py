@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic 
-from django.views.generic import CreateView, UpdateView, DeleteView   #listview is test  
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView   #DetailView is test  
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, Category
@@ -28,12 +28,20 @@ class PostList(generic.ListView):
     template_name = "blog/index.html"
     paginate_by = 6
 
-    def get_context_data(self, *args, **kwargs): #test
-        cat_menu = Category.objects.all()   #test 
-        context = super(PostList,self).get_context_data(*args, **kwargs) #test 
-        context["cat_menu"] = cat_menu   #test 
-        return context   #test 
+    def get_context_data(self, *args, **kwargs):  
+        cat_menu = Category.objects.all()    
+        context = super(PostList,self).get_context_data(*args, **kwargs)  
+        context["cat_menu"] = cat_menu    
+        return context    
 
+class PostDetailView(DetailView): #test 
+    model = Post #test 
+    template_name = "blog/post_detail.html" #test 
+
+    def get_context_data(self, *args, **kwargs): #test 
+        context = super().get_context_data(*args, **kwargs) #test 
+        context["cat_menu"] = Category.objects.all() #test 
+        return context
 
 def post_detail(request, slug):
 
@@ -55,6 +63,7 @@ def post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
+
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -80,6 +89,8 @@ def post_detail(request, slug):
         "comment_count": comment_count,
         "comment_form": comment_form,
     },
+
+
 )
 
 def CategoryView(request, cats):
