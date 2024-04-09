@@ -58,11 +58,9 @@ Table of contents
     - "I think therefore I blog" walkthrough project by Code Institute.
     - Readme inspired in this project : https://github.com/TulaUnogi/cat-beans-cafe/blob/main/README.md
     - Recipe pictures and about pictures: unsplash
-    - Tutorial series https://www.youtube.com/playlist?list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi 
-    - Tutorial to add new post page  https://www.youtube.com/watch?v=m3efqF9abyg 
-    - Tutorial to like button https://www.youtube.com/watch?v=PXqRPqDjDgc 
-    - Tutorial to style form   https://www.youtube.com/watch?v=6-XXvUENY_8
-    - Tutorial for edit form https://www.youtube.com/watch?v=J7xaESAddDQ
-    - Tutorial to delete form https://www.youtube.com/watch?v=8NPOwmtupiI 
-    
+    - Tutorial series 1  https://www.youtube.com/watch?v=k_RY1og4Zj0&list=PLOLrQ9Pn6cawWd-5UZM6CIm0uqFXeBcTd
+    - Tutorial series 2 https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy 
+    - Tutorial series 3 https://www.youtube.com/watch?v=Mezody4yiXw&list=PLVBKjEIdL9bvCdI4l1Emvbezv10GjUaLk 
+    - Tutorial series 4 https://www.youtube.com/playlist?list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi 
+    - Tutorial series 5 https://www.youtube.com/watch?v=rHux0gMZ3Eg 
 
