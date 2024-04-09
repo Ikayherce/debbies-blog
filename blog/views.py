@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic 
-from django.views.generic import CreateView, UpdateView, DeleteView   #test line 
+from django.views.generic import CreateView, UpdateView, DeleteView   #listview is test  
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, Category
 from .forms import CommentForm, PostForm
-from django.urls import reverse_lazy, reverse  #test line
+from django.urls import reverse_lazy, reverse   
 
 
 def LikeView(request, slug):
@@ -27,6 +27,12 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
     paginate_by = 6
+
+    def get_context_data(self, *args, **kwargs): #test
+        cat_menu = Category.objects.all()   #test 
+        context = super(PostList,self).get_context_data(*args, **kwargs) #test 
+        context["cat_menu"] = cat_menu   #test 
+        return context   #test 
 
 
 def post_detail(request, slug):

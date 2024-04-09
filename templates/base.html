@@ -54,15 +54,22 @@
                           href="{% url 'about' %}"
                           >About</a>
                       </li>  
+                      <!--Recipes by category menu -->
+                      {% if cat_menu %}
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                            {% for item in cat_menu %}
+
+                            <li><a class="dropdown-item" href="{% url 'category' item|slugify  %}">{{ item }}</a></li> 
+                            
+                            {% endfor %}
+                         
                         </ul>
                       </li>
+                      {% endif %}
                      <!--Test code for new post if user is superuser--> 
                       {% if user.is_superuser %}
                         <li class="nav-item">
