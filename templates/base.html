@@ -35,7 +35,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">PLACEHOLDER TEXT<span class="red-o"></span><span
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">DEBBIE'S RECIPE BLOG<span class="red-o"></span><span
                         class="thin"></span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,6 +69,11 @@
                          
                         </ul>
                       </li>
+                      {% else %}
+                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'category-list' %}">Recipes by Category</a>
+                       </li>
                       {% endif %}
                      <!--Test code for new post if user is superuser--> 
                       {% if user.is_superuser %}

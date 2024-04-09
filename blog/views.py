@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic 
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView   #DetailView is test  
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, Category
 from .forms import CommentForm, PostForm
 from django.urls import reverse_lazy, reverse   
+from django.contrib.auth.views import LoginView, LogoutView  #test 
+
 
 
 def LikeView(request, slug):
@@ -93,6 +95,11 @@ def post_detail(request, slug):
 
 )
 
+#test code below  
+def CategoryListView(request):
+    cat_menu_list = Category.objects.all()  
+    return render(request,'category_list.html',{'cat_menu_list': cat_menu_list})
+
 def CategoryView(request, cats):
     cats_lower = cats.lower()
     try:
@@ -120,10 +127,7 @@ def CategoryView(request, cats):
 
 
 
-#test code below for category view
-#def CategoryView(request, cats):
-#    category_posts = Post.objects.filter(category=cats)
-#    return render(request,'categories.html',{'cats':cats,'category_posts':category_posts})
+
 
 def comment_edit(request, slug, comment_id):
     """
@@ -212,3 +216,24 @@ class DeletePostView(DeleteView):
         context["cat_menu"] = cat_menu    
         return context 
 
+#test below
+
+#class CustomLoginView(LoginView):
+#    template_name = 'login.html'
+
+#    def get_context_data(self, *args, **kwargs):  
+#        cat_menu = Category.objects.all()    
+#       context = super( CustomLoginView,self).get_context_data(*args, **kwargs)  
+#        context["cat_menu"] = cat_menu    
+#        return context 
+
+#class CustomLogoutView(LogoutView):
+#    template_name = 'logout.html'
+
+#    def get_context_data(self, *args, **kwargs):  
+#        cat_menu = Category.objects.all()    
+#        context = super( CustomLogoutView,self).get_context_data(*args, **kwargs)  
+#        context["cat_menu"] = cat_menu    
+#        return context 
+ 
+ #end of test 
