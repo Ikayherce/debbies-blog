@@ -101,8 +101,9 @@ def CategoryView(request, cats):
     except Category.DoesNotExist:
         category_posts = Post.objects.none()  # Empty queryset
     
-    return render(request, 'categories.html', {'cats': cats.title(), 'category_posts': category_posts})
+    cat_menu = Category.objects.all()  # test
 
+    return render(request, 'categories.html', {'cats': cats.title(), 'category_posts': category_posts, 'cat_menu': cat_menu})  #test 
 
 #test code below for category view
 #def CategoryView(request, cats):
