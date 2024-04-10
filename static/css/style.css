@@ -5,10 +5,20 @@ body {
 }
 
 .brand {
-    font-family: "Josefin Sans", sans-serif; 
+    /*font-family: "Josefin Sans", sans-serif;*/
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 300;
     color: #90350a;
+}
+
+/*test custom navbar*/
+.custom-navbar {
+    background-color: #f7e3af;  
+    width: 100%;  
+    min-height: 70px;  
+    display: flex;
+    align-items: center;  
 }
 
 .red-o {
@@ -24,11 +34,11 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #f7e3af;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #ffffff;
 }
 
 .card {
@@ -40,14 +50,6 @@ body {
     position: relative;
 }
 
-/*text showing what author has written the post on each image/post on homepage. 
-//*.image-flash {            
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;*//
-}
 
 .scale {
     width: 100%;
