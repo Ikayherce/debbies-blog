@@ -3,64 +3,110 @@
 
 {% block content %}
 
-<!--This html is where the code to display the list of blog posts appears-->
-<!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+<div class="container-fluid">
+
+    {% if is_paginated and page_obj.number == 1 %}
+    <!-- Latest Post is Highlighted  -->
+    <div class="row">
+        {% if post_list %}
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!--Highlighted post's image here -->
+                        {% if "placeholder" in post_list.0.featured_image.url %}
+                        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="card-img-top" src="{{ post_list.0.featured_image.url }}" alt="{{ post_list.0.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
                         <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                  alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                                  alt="{{ post.title }}">
-                                {% endif %}
-                                <!--text showing what author wrote the post-->
-                                <!--<div class="image-flash"> 
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>  -->
-                            </div>
-                            <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <a href ="{% url 'category' post.category|slugify  %}">{{ post.category }}</a>                        
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <!-- Test code for edit and delete new post -->
+                            <!-- Highlighted post's title and excerpt here -->
+                            <h2 class="card-title">{{ post_list.0.title }}</h2>
+                            <p class="card-text">{{ post_list.0.excerpt }}</p>
                             {% if user.is_superuser %}
-                                <a href="{% url 'update_post' slug=post.slug %}">Edit post</a>
-                                <a href="{% url 'delete_post' slug=post.slug %}">Delete post</a>
+                            <a href="{% url 'update_post' slug=post_list.0.slug %}" class="btn btn-secondary">Edit</a>
+                            <a href="{% url 'delete_post' slug=post_list.0.slug %}" class="btn btn-danger">Delete</a>
                             {% endif %}
-                            
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
-                            </p>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
             </div>
         </div>
+        {% endif %}
     </div>
+
+    <!-- Second Row - Displaying Three Posts -->
+    <div class="row">
+        {% for post in post_list|slice:"1:4" %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    {% if user.is_superuser %}
+                    <a href="{% url 'update_post' slug=post.slug %}" class="btn btn-secondary">Edit</a>
+                    <a href="{% url 'delete_post' slug=post.slug %}" class="btn btn-danger">Delete</a>
+                    {% endif %}
+                    <hr />
+                    <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <!-- After first page, it's two rows with three posts each -->
+    <div class="row">
+        {% for post in post_list %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    {% if user.is_superuser %}
+                    <a href="{% url 'update_post' slug=post.slug %}" class="btn btn-secondary">Edit</a>
+                    <a href="{% url 'delete_post' slug=post.slug %}" class="btn btn-danger">Delete</a>
+                    {% endif %}
+                    <hr />
+                    <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Pagination -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li>
-             <a href="?page={{ page_obj.previous_page_number }}"
-          class="page-link">&laquo; PREV</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
             </li>
             {% endif %}
             {% if page_obj.has_next %}
@@ -71,6 +117,8 @@
     {% endif %}
 </div>
 
-<!-- index.html content ends here -->
+
 
 {% endblock %}
+
+
