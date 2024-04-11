@@ -2,10 +2,7 @@
 {% load static %}
 
 {% block content %}
-
-
 <div class="container-fluid">
-
     {% if is_paginated and page_obj.number == 1 %}
     <!-- Latest Post is Highlighted  -->
     <div class="row">
@@ -22,13 +19,20 @@
                         {% endif %}
                     </div>
                     <div class="col-md-6">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column justify-content-center">
                             <!-- Highlighted post's title and excerpt here -->
-                            <h2 class="card-title">{{ post_list.0.title }}</h2>
-                            <p class="card-text">{{ post_list.0.excerpt }}</p>
+                            <h2 class="card-title" style="margin-top: 110px;">
+                                <a href="{% url 'post_detail' slug=post_list.0.slug %}" class="post-link">{{ post_list.0.title }}</a>
+                            </h2>
+                            <p class="card-text" style="margin-top: 20px;">{{ post_list.0.excerpt }}</p>
+                            <p>
+                                <a href="{% url 'category' post_list.0.category|slugify %}">{{ post_list.0.category }}</a>
+                            </p>
                             {% if user.is_superuser %}
-                            <a href="{% url 'update_post' slug=post_list.0.slug %}" class="btn btn-secondary">Edit</a>
-                            <a href="{% url 'delete_post' slug=post_list.0.slug %}" class="btn btn-danger">Delete</a>
+                            <div class="mt-auto">
+                                <a href="{% url 'update_post' slug=post_list.0.slug %}" class="btn btn-secondary btn-sm" style="margin-right: 5px;">Edit</a>
+                                <a href="{% url 'delete_post' slug=post_list.0.slug %}" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
                             {% endif %}
                         </div>
                     </div>
@@ -37,7 +41,6 @@
         </div>
         {% endif %}
     </div>
-
     <!-- Second Row - Displaying Three Posts -->
     <div class="row">
         {% for post in post_list|slice:"1:4" %}
@@ -67,7 +70,6 @@
         </div>
         {% endfor %}
     </div>
-
     {% else %}
     <!-- After first page, it's two rows with three posts each -->
     <div class="row">
@@ -99,7 +101,6 @@
         {% endfor %}
     </div>
     {% endif %}
-
     <!-- Pagination -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
@@ -116,9 +117,4 @@
     </nav>
     {% endif %}
 </div>
-
-
-
 {% endblock %}
-
-
