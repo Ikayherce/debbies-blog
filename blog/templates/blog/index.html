@@ -23,11 +23,12 @@
                             <!-- Highlighted post's title and excerpt here -->
                             <h2 class="card-title" style="margin-top: 110px;">
                                 <a href="{% url 'post_detail' slug=post_list.0.slug %}" class="post-link">{{ post_list.0.title }}</a>
-                            </h2>
-                            <p class="card-text" style="margin-top: 20px;">{{ post_list.0.excerpt }}</p>
+                            </h2>                           
                             <p>
-                                <a href="{% url 'category' post_list.0.category|slugify %}">{{ post_list.0.category }}</a>
+                                <a href="{% url 'category' post_list.0.category|slugify %}" class="category-link">{{ post_list.0.category }}</a>
                             </p>
+                            <p class="card-text" style="margin-top: 10px;">{{ post_list.0.excerpt }}</p>
+
                             {% if user.is_superuser %}
                             <div class="mt-auto">
                                 <a href="{% url 'update_post' slug=post_list.0.slug %}" class="btn btn-secondary btn-sm" style="margin-right: 5px;">Edit</a>
@@ -56,7 +57,7 @@
                     </div>
                     <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
                         <h2 class="card-title">{{ post.title }}</h2>
-                        <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+                        <a href="{% url 'category' post.category|slugify %}" class="category-link">{{ post.category }}</a>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
                     {% if user.is_superuser %}
@@ -86,7 +87,7 @@
                     </div>
                     <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
                         <h2 class="card-title">{{ post.title }}</h2>
-                        <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+                        <a href="{% url 'category' post.category|slugify %}" class="category-link">{{ post.category }}</a>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
                     {% if user.is_superuser %}

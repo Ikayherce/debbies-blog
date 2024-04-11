@@ -1,12 +1,24 @@
 
 
 body {
-    background-color: #f9d5f1;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #220901 
 }
+/*h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
+    color: #220901 
+}*/
 
+/*.card-title {
+    font-family: "Raleway", sans-serif;
+    color: #220901 
+    
+}*/
 .brand {
-    /*font-family: "Josefin Sans", sans-serif;*/
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1.4rem;
     font-weight: 300;
     color: #90350a;
@@ -14,11 +26,12 @@ body {
 
 /*test custom navbar*/
 .custom-navbar {
-    background-color: #f7e3af;  
+    background-color: #F1E4C3;  
     width: 100%;  
     min-height: 80px;  
     display: flex;
     align-items: center;  
+    font-family: "Raleway", sans-serif;
 }
 
 .red-o {
@@ -34,11 +47,11 @@ body {
 }
 
 .dark-bg {
-    background-color: #f7e3af;
+    background-color: #F1E4C3;
 }
 
 .main-bg {
-    background-color: #ffffff;
+    background-color: #FFFFEC;
 }
 
 .card {
@@ -98,12 +111,13 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #220901 ;
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    text-decoration: underline; 
+    color: #872302;
 }
 
 .post-title {
@@ -116,21 +130,31 @@ body {
     color: lightgray;
 }
 
-.btn-signup,
+/*.btn-signup,
 .btn-edit {
     background-color: #188181;
     color: #fff;
-}
+}*/
 
-.btn-signup:hover,
+/*.btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
     color: #23BBBB;
-}
+}*/
 
-.link {
+/*.link {
     color: #23BBBB;
     text-decoration: none;
+}*/
+
+.category-link {
+    text-decoration: none;  
+    color: #90350a;  
+}
+
+.category-link:hover {
+    text-decoration: underline; 
+    color: #ef6e43;  
 }
 
 .link:hover,
@@ -163,21 +187,4 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
-}
-/* Custom CSS for pushing down the excerpt of the highlighted post */
-.highlighted-post .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 100%; /* Ensures the card body takes up full height */
-}
-
-.highlighted-post .card-text {
-    margin-top: 20px; /* Adjust the top margin to push down the excerpt */
-    flex-grow: 1; /* Allow the excerpt to grow vertically to fill the space */
-}
-
-.highlighted-post .btn-group {
-    margin-top: 20px; /* Adjust the top margin for the button group */
 }
