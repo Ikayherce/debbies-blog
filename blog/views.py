@@ -45,6 +45,7 @@ class PostDetailView(DetailView): #test
         context["cat_menu"] = Category.objects.all() #test 
         return context
 
+
 def post_detail(request, slug):
 
 
@@ -65,6 +66,8 @@ def post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
+
+    comment_form = CommentForm()  # test 
 
 
     if request.method == "POST":
@@ -91,7 +94,6 @@ def post_detail(request, slug):
         "comment_count": comment_count,
         "comment_form": comment_form,
     },
-
 
 )
 
@@ -216,24 +218,3 @@ class DeletePostView(DeleteView):
         context["cat_menu"] = cat_menu    
         return context 
 
-#test below
-
-#class CustomLoginView(LoginView):
-#    template_name = 'login.html'
-
-#    def get_context_data(self, *args, **kwargs):  
-#        cat_menu = Category.objects.all()    
-#       context = super( CustomLoginView,self).get_context_data(*args, **kwargs)  
-#        context["cat_menu"] = cat_menu    
-#        return context 
-
-#class CustomLogoutView(LogoutView):
-#    template_name = 'logout.html'
-
-#    def get_context_data(self, *args, **kwargs):  
-#        cat_menu = Category.objects.all()    
-#        context = super( CustomLogoutView,self).get_context_data(*args, **kwargs)  
-#        context["cat_menu"] = cat_menu    
-#        return context 
- 
- #end of test 
