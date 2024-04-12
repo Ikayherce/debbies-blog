@@ -47,8 +47,6 @@ class PostDetailView(DetailView): #test
 
 
 def post_detail(request, slug):
-
-
     """
     Display an individual :model:`blog.Post`.
 
@@ -71,35 +69,35 @@ def post_detail(request, slug):
 
 
     if request.method == "POST":
-    comment_form = CommentForm(data=request.POST)
-    if comment_form.is_valid():
-        comment = comment_form.save(commit=False)
-        comment.author = request.user
-        comment.post = post
-        comment.save()
-        messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted and awaiting approval'
-        )
-        # Redirect after POST to prevent resubmission issues
-        return redirect('some-view-name', slug=post.slug)
-    
-    else:
-    comment_form = CommentForm()
+    	comment_form = CommentForm(data=request.POST)
+    	if comment_form.is_valid():
+        	comment = comment_form.save(commit=False)
+        	comment.author = request.user
+        	comment.post = post
+        	comment.save()
+        	messages.add_message(
+            	request, messages.SUCCESS,
+            	'Comment submitted and awaiting approval'
+        	)
+        	# Redirect after POST to prevent resubmission issues
+        	return redirect('some-view-name', slug=post.slug)
+	else:
+		comment_form = CommentForm()
 
 
     return render(
-    request,
-    "blog/post_detail.html",
-    {
-        "post": post,
-        "comments": comments,
-        "comment_count": comment_count,
-        "comment_form": comment_form,
-    },
+    	request,
+    	"blog/post_detail.html",
+    	{
+			"post": post,
+			"comments": comments,
+			"comment_count": comment_count,
+			"comment_form": comment_form,
+    	},
+	)
 
-)
 
+  
 #test code below  
 def CategoryListView(request):
     cat_menu_list = Category.objects.all()  
