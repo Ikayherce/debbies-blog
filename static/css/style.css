@@ -39,6 +39,19 @@ body {
     font-size: 16px;  
 }
 
+.navbar-collapse {
+    z-index: 100;
+    background-color: #F1E4C3;
+}
+
+.dropdown-menu {
+    background-color: #F1E4C3;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #542110;  
+    background-color: #F1E4C3;
+}
 .red-o {
     color: #E84610;
 }
@@ -137,3 +150,9 @@ body {
     color: rgb(222, 146, 168);
 }
 
+
+@media screen and (max-width: 315px){
+    .brand {
+        font-size: 1.1rem;
+    }
+}
