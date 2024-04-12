@@ -79,8 +79,7 @@ def post_detail(request, slug):
             	request, messages.SUCCESS,
             	'Comment submitted and awaiting approval'
         	)
-        	# Redirect after POST to prevent resubmission issues
-        	return redirect('post_detail', slug=post.slug)
+
 	else:
 		comment_form = CommentForm()
 
