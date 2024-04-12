@@ -80,7 +80,7 @@ def post_detail(request, slug):
             	'Comment submitted and awaiting approval'
         	)
         	# Redirect after POST to prevent resubmission issues
-        	return redirect('some-view-name', slug=post.slug)
+        	return redirect('post_detail', slug=post.slug)
 	else:
 		comment_form = CommentForm()
 
