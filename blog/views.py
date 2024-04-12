@@ -71,17 +71,20 @@ def post_detail(request, slug):
 
 
     if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
-            )
-
+    comment_form = CommentForm(data=request.POST)
+    if comment_form.is_valid():
+        comment = comment_form.save(commit=False)
+        comment.author = request.user
+        comment.post = post
+        comment.save()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Comment submitted and awaiting approval'
+        )
+        # Redirect after POST to prevent resubmission issues
+        return redirect('some-view-name', slug=post.slug)
+    
+    else:
     comment_form = CommentForm()
 
 
