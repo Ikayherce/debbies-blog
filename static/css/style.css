@@ -43,9 +43,30 @@ body {
     margin-right: auto;
 }
 
+.navbar-nav li {
+    list-style: none !important;
+}
+
+.nav-item::marker {
+    display: none;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.navbar-nav > .nav-item {
+    list-style: none;
+}
+
 .navbar-brand {
     margin-right: auto;
 }
+
+/*.custom-navbar-list {
+    list-style: none !important;
+}*/
+
 
 /*.navbar-nav .nav-link {
     margin-right: 10px;  
