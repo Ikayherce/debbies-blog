@@ -38,25 +38,21 @@
     </div>
 
     <!-- Like Button -->
+    {% if user.is_authenticated %}
     <div class="row mt-4">
         <div class="col-md-4 offset-md-2">
             <form action="{% url 'like_post' slug=post.slug %}" method="POST">
                 {% csrf_token %}
                 {% if user in post.likes.all %}
                     <button type="submit" class="btn btn-secondary btn-lg">Unlike</button>
-                    <!--<button type="submit" class="btn btn-primary">Unlike</button>-->
-                    
                 {% else %}
                     <button type="submit" class="btn btn-primary btn-lg">Like</button>
-                   <!-- <button type="submit" class="btn btn-secondary">Like</button>-->
                 {% endif %}
                 <p class="total-likes" >Total Likes: {{ post.total_likes }}</p>
             </form>
         </div>
-       <!-- <div class="col-md-4">
-            <p class="total-likes" >Total Likes: {{ post.total_likes }}</p>
-        </div>-->
     </div>
+     {% endif %}
 
     <!-- Comment Section -->
     <div class="row">
