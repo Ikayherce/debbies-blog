@@ -13,10 +13,12 @@ body {
     font-size: 1.4rem;
     font-weight: 300;
     color: #90350a;
-    padding-left: 10px;
 }
 
-
+.navbar-brand {
+    padding-right: 20px;  
+    padding-left: 10px;
+}
 
 /* custom navbar*/
 
@@ -43,21 +45,21 @@ body {
     margin-right: auto;
 }
 
-.navbar-nav li {
+/*.navbar-nav li {
     list-style: none !important;
-}
+}*/
 
-.nav-item::marker {
+/*.nav-item::marker {
     display: none;
-}
+}*/
 
 .nav-item {
     list-style-type: none;
 }
 
-.navbar-nav > .nav-item {
+/*.navbar-nav > .nav-item {
     list-style: none;
-}
+}*/
 
 .navbar-brand {
     margin-right: auto;
