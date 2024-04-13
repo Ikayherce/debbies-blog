@@ -20,21 +20,11 @@ body {
 
 /* custom navbar*/
 
-/*.custom-navbar {
-    position: relative;
-    /*background-color: #F1E4C3;
-    background-color: #FFFFEC;
-    width: 100%;  
-    min-height: 80px;  
-    display: flex;
-    font-family: "Raleway", sans-serif;
-}*/
-
 .custom-navbar-fullwidth {
     padding-left: 0 !important;  
     padding-right: 0 !important;  
     width: 100% !important;  
-    background-color: #FFFFEC;
+    background-color: #F1E4C3;
 }
 
 .nav-item {
@@ -45,8 +35,7 @@ body {
 
 .navbar-collapse {
     z-index: 100;
-    /*background-color: #F1E4C3;*/
-    background-color: #FFFFEC;
+    background-color: #F1E4C3;
 
 }
 
@@ -59,7 +48,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-    margin-right: 10px; /* Adjust spacing between nav links */
+    margin-right: 10px;  
 }
 
 #navbarText {
@@ -67,15 +56,12 @@ body {
 }
 
 .dropdown-menu {
-    /*background-color: #F1E4C3;*/
-    background-color: #FFFFEC;
-
+    background-color: #F1E4C3;
 }
 
 .dropdown-menu .dropdown-item {
     color: #542110;  
-    /*background-color: #F1E4C3;*/
-    background-color: #FFFFEC;
+    background-color: #F1E4C3;
 
 }
 .red-o {
@@ -91,8 +77,7 @@ body {
 }
 
 .dark-bg {
-    /*background-color: #F1E4C3;*/
-    background-color: #FFFFEC;  
+    background-color: #F1E4C3;
     width: 100%;
 }
 
@@ -191,9 +176,8 @@ body {
 
     .navbar-collapse {
         z-index: 100;
-        /*background-color: #F1E4C3;*/
-        background-color: #FFFFEC;
-
+        background-color: #F1E4C3;
+    
     }
     
 }

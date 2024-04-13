@@ -8,7 +8,6 @@ urlpatterns = [
     path('add_category/', AddCategoryView.as_view(), name='add_category'),  #test code for new post view
     path('<slug:slug>/', views.post_detail, name='post_detail'),  
     path('category-list/',CategoryListView, name= 'category-list'),
-    # path('<slug:slug>/', PostDetailView.as_view(), name='post_detail'),  #test
     path('<slug:slug>/edit_comment/<int:comment_id>',
         views.comment_edit, name='comment_edit'),
     path('<slug:slug>/delete_comment/<int:comment_id>',
