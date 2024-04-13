@@ -233,6 +233,17 @@ body {
     padding-left: 0;
 }
 
+/*Login link in post_detail page*/ 
+.login-link {
+    color: #542110;  
+    text-decoration: underline; 
+}
+
+.login-link:hover {
+    text-decoration: underline;  
+    color:#90350a
+}
+
 
 /*Category list page*/
 
