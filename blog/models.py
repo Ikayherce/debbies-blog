@@ -34,11 +34,11 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    likes = models.ManyToManyField(User, related_name='liked_posts') # code for likes
-    category =  models.ForeignKey(Category, on_delete=models.CASCADE) #test code for categories
+    likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)  
+    category =  models.ForeignKey(Category, on_delete=models.CASCADE) 
 
-    def total_likes(self):          # code to display likes 
-        return self.likes.count()    # code to display likes 
+    def total_likes(self):           
+        return self.likes.count()     
 
     class Meta: 
         ordering = ["-created_on"]
@@ -52,8 +52,8 @@ class Post(models.Model):
     
     #test code to generate slug if not specified 
     def save(self, *args, **kwargs):
-        if not self.slug:  # Generate slug only if not provided
-            self.slug = slugify(self.title)  # Generate slug from title
+        if not self.slug:   
+            self.slug = slugify(self.title)   
         super().save(*args, **kwargs)
 
 
