@@ -47,8 +47,20 @@ body {
     margin-right: auto;
 }
 
-.navbar-nav .nav-link {
+/*.navbar-nav .nav-link {
     margin-right: 10px;  
+    color: #542110; 
+
+}*/
+
+.nav-link {
+    margin-right: 10px;  
+    color: #542110 !important; 
+
+}
+
+.nav-link:hover {
+    color:  #90350a !important;
 }
 
 #navbarText {
@@ -64,6 +76,11 @@ body {
     background-color: #F1E4C3;
 
 }
+
+.dropdown-item:hover {
+    color:  #90350a !important;
+}
+
 .red-o {
     color: #E84610;
 }
