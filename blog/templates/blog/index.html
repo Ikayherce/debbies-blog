@@ -5,11 +5,11 @@
 <div class="container-fluid">
     {% if is_paginated and page_obj.number == 1 %}
     <!-- Latest Post is Highlighted  -->
-    <div class="row">
+    <div class="row align-items-center">
         {% if post_list %}
-        <div class="col-md-12 mb-4">
+        <div class="col-md-12 mb-4 highlighted-post">
             <div class="card">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <!--Highlighted post's image here -->
                         {% if "placeholder" in post_list.0.featured_image.url %}
@@ -45,7 +45,7 @@
     <!-- Second Row - Displaying Three Posts -->
     <div class="row">
         {% for post in post_list|slice:"1:4" %}
-        <div class="col-md-4">
+        <div class="col-md-4 post-column">
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="image-container">

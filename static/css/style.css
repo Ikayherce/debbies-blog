@@ -197,17 +197,3 @@ body {
     }
     
 }
-
-@media screen and (max-width: 768px) {
-    .card-title {
-        /* Adjust the styles to match other posts */
-        /* For example, you can remove margin, padding, or adjust font size */
-        margin: auto;
-        padding: auto;
-    }
-
-    .card-text {
-        margin: auto;
-        padding: auto;
-    }
-}
