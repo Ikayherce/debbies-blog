@@ -31,12 +31,12 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <div class="container-fluid"> <!--CONTAINER or container-fluid class makes navbar look ok in small screens-->
+    <div class="container-fluid px-0 "> <!--CONTAINER or container-fluid class makes navbar look ok in small screens-->
          <!-- Navigation -->
          <nav class="navbar navbar-expand-lg navbar-light custom-navbar custom-navbar-fullwidth">
-            <div class="container-fluid">
+            <div class="container-fluid mx-auto p-2"> <!--px-0 -->
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <span class="brand">Debbie's Recipe Blog<span class="red-o"></span><span class="thin"></span></span>
+                    <span class="brand mx-auto p-2"">Debbie's Recipe Blog<span class="red-o"></span><span class="thin"></span></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

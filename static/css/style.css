@@ -13,7 +13,10 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     color: #90350a;
+    padding-left: 10px;
 }
+
+
 
 /* custom navbar*/
 
@@ -176,6 +179,10 @@ body {
     color: rgb(222, 146, 168);
 }
 
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
 
 @media screen and (max-width: 315px){
     .brand {
@@ -189,4 +196,18 @@ body {
 
     }
     
+}
+
+@media screen and (max-width: 768px) {
+    .card-title {
+        /* Adjust the styles to match other posts */
+        /* For example, you can remove margin, padding, or adjust font size */
+        margin: auto;
+        padding: auto;
+    }
+
+    .card-text {
+        margin: auto;
+        padding: auto;
+    }
 }
