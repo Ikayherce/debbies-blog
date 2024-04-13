@@ -204,6 +204,9 @@ body {
     background: #E84610;
 }
 
+.custom-text-color {
+    color: #916253e7 !important; 
+}
 
 .faded {
     color: rgb(172, 175, 175);
