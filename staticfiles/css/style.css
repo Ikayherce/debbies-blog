@@ -8,6 +8,11 @@ body {
     color: #542110 
 }
 
+.image-container.highlighted-image {
+    position: relative;
+    padding-left: 2rem;  
+}
+
 .brand {
     font-family: "Raleway", sans-serif;
     font-size: 1.4rem;
@@ -199,6 +204,21 @@ body {
     background: #E84610;
 }
 
+.btn-custom {
+    color: #7f5040;  
+    background-color: #FFFFEC;  
+    border-color: #7f5040; 
+}
+
+.btn-custom:hover {
+    background-color: #7f5040;  
+    border-color: #7f5040;  
+    color:#FFFFEC;
+}
+
+.custom-text-color {
+    color: #916253e7 !important; 
+}
 
 .faded {
     color: rgb(172, 175, 175);
