@@ -8,6 +8,11 @@ body {
     color: #542110 
 }
 
+.image-container {
+    position: relative;
+    padding-left: 2rem; 
+}
+
 .brand {
     font-family: "Raleway", sans-serif;
     font-size: 1.4rem;
