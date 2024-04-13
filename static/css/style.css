@@ -129,6 +129,10 @@ body {
     color: #542110 ;
 }
 
+.custom-icon {
+    color:  #542110;  
+}
+
 .post-link:hover,
 .page-link {
     text-decoration: underline; 
