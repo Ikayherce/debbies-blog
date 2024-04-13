@@ -204,6 +204,18 @@ body {
     background: #E84610;
 }
 
+.btn-custom {
+    color: #7f5040;  
+    background-color: #FFFFEC;  
+    border-color: #7f5040; 
+}
+
+.btn-custom:hover {
+    background-color: #7f5040;  
+    border-color: #7f5040;  
+    color:#FFFFEC;
+}
+
 .custom-text-color {
     color: #916253e7 !important; 
 }
