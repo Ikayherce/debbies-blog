@@ -5,33 +5,80 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: #220901 
+    color: #542110 
 }
-/*h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway", sans-serif;
-    color: #220901 
-}*/
 
-/*.card-title {
-    font-family: "Raleway", sans-serif;
-    color: #220901 
-    
-}*/
 .brand {
     font-family: "Raleway", sans-serif;
     font-size: 1.4rem;
     font-weight: 300;
     color: #90350a;
+    padding-left: 10px;
 }
 
-/*test custom navbar*/
-.custom-navbar {
-    background-color: #F1E4C3;  
-    width: 100%;  
-    min-height: 80px;  
-    display: flex;
-    align-items: center;  
+
+
+/* custom navbar*/
+
+.custom-navbar-fullwidth {
+    padding-left: 0 !important;  
+    padding-right: 0 !important;  
+    width: 100% !important;  
+    background-color: #F1E4C3;
+}
+
+.nav-item {
     font-family: "Raleway", sans-serif;
+    color: #542110; 
+    font-size: 16px;  
+}
+
+.navbar-collapse {
+    z-index: 100;
+    background-color: #F1E4C3;
+
+}
+
+.navbar-nav {
+    margin-right: auto;
+}
+
+.navbar-brand {
+    margin-right: auto;
+}
+
+/*.navbar-nav .nav-link {
+    margin-right: 10px;  
+    color: #542110; 
+
+}*/
+
+.nav-link {
+    margin-right: 10px;  
+    color: #542110 !important; 
+
+}
+
+.nav-link:hover {
+    color:  #90350a !important;
+}
+
+#navbarText {
+    z-index: 1000;  
+}
+
+.dropdown-menu {
+    background-color: #F1E4C3;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #542110;  
+    background-color: #F1E4C3;
+
+}
+
+.dropdown-item:hover {
+    color:  #90350a !important;
 }
 
 .red-o {
@@ -48,11 +95,19 @@ body {
 
 .dark-bg {
     background-color: #F1E4C3;
+    width: 100%;
 }
 
 .main-bg {
     background-color: #FFFFEC;
+    width: 100%;
 }
+
+.footer {
+    padding-left: 0 !important;  
+    padding-right: 0 !important;  
+}
+
 
 .card {
     border: none;
@@ -69,49 +124,13 @@ body {
     height: auto;
 }
 
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
 .post-link {
     text-decoration: none;
-    color: #220901 ;
+    color: #542110 ;
+}
+
+.custom-icon {
+    color:  #542110 !important;  
 }
 
 .post-link:hover,
@@ -127,25 +146,8 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: #7f5040;
 }
-
-/*.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}*/
-
-/*.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}*/
-
-/*.link {
-    color: #23BBBB;
-    text-decoration: none;
-}*/
 
 .category-link {
     text-decoration: none;  
@@ -174,12 +176,6 @@ body {
     background: #E84610;
 }
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
 
 .faded {
     color: rgb(172, 175, 175);
@@ -187,4 +183,22 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@media screen and (max-width: 315px){
+    .brand {
+        font-size: 1.1rem;
+    }
+
+    .navbar-collapse {
+        z-index: 100;
+        background-color: #F1E4C3;
+    
+    }
+    
 }

@@ -130,7 +130,7 @@ body {
 }
 
 .custom-icon {
-    color:  #542110;  
+    color:  #542110 !important;  
 }
 
 .post-link:hover,
