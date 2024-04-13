@@ -233,6 +233,27 @@ body {
     padding-left: 0;
 }
 
+
+/*Category list page*/
+
+.category-list-title {
+    margin: 10px; 
+}
+
+.category-list {
+    padding: 2px;
+}
+.category-item {
+    margin: 10px; 
+}
+.category-link {
+    text-decoration: none;
+    font-family: "Raleway", sans-serif; ;
+    color: #542110;
+}
+.category-link:hover {
+    color: #90350a; 
+}
 @media screen and (max-width: 315px){
     .brand {
         font-size: 1.1rem;
