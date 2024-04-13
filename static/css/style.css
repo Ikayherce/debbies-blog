@@ -8,9 +8,9 @@ body {
     color: #542110 
 }
 
-.image-container {
+.image-container.highlighted-image {
     position: relative;
-    padding-left: 2rem; 
+    padding-left: 2rem;  
 }
 
 .brand {
