@@ -2,7 +2,6 @@
 
 body {
     font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     color: #542110 
@@ -182,12 +181,12 @@ body {
 .btn-custom {
     color: #7f5040;  
     background-color: #FFFFEC;  
-    border-color: #7f5040; 
+    border-color: #542110; 
 }
 
 .btn-custom:hover {
     background-color: #7f5040;  
-    border-color: #7f5040;  
+    border-color: #542110;  
     color:#FFFFEC;
 }
 
