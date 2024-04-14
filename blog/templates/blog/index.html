@@ -7,7 +7,7 @@
     <!-- Latest Post is Highlighted  -->
     <div class="row align-items-center">
         {% if post_list %}
-        <div class="col-md-12 mb-4 highlighted-post">
+        <div class="col-md-12 mb-4 highlighted-post px-4"> <!--test-->
             <div class="card">
                 <div class="row align-items-center">
                     <div class="col-md-6 px-md-4"> <!--test-->
@@ -21,15 +21,22 @@
                         </div>
                     </div>
                     <div class="col-md-6 px-md-4"> <!--test-->
-                        <div class="card-body d-flex flex-column justify-content-center">
+                        <div class="card-body d-flex flex-column justify-content-center px-4">
                             <!-- Highlighted post's title and excerpt here -->
-                            <h2 class="card-title" style="margin-top: 110px;">
+                            <!--<h2 class="card-title" style="margin-top: 110px;">
                                 <a href="{% url 'post_detail' slug=post_list.0.slug %}" class="post-link">{{ post_list.0.title }}</a>
                             </h2>                           
                             <p>
                                 <a href="{% url 'category' post_list.0.category|slugify %}" class="category-link">{{ post_list.0.category }}</a>
                             </p>
-                            <p class="card-text" style="margin-top: 10px;">{{ post_list.0.excerpt }}</p>
+                            <p class="card-text" style="margin-top: 10px;">{{ post_list.0.excerpt }}</p>-->
+                            <h2 class="card-title mb-4">
+                                <a href="{% url 'post_detail' slug=post_list.0.slug %}" class="post-link">{{ post_list.0.title }}</a>
+                            </h2>                           
+                            <p class="mb-4">
+                                <a href="{% url 'category' post_list.0.category|slugify %}" class="category-link">{{ post_list.0.category }}</a>
+                            </p>
+                            <p class="card-text">{{ post_list.0.excerpt }}</p>
 
                             {% if user.is_superuser %}
                             <div class="mt-auto">
