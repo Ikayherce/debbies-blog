@@ -64,10 +64,12 @@
                         </ul>
                     </li>
                     {% else %}
-                    <ul> 
+                </ul> 
+                <ul> 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'category-list' %}">Recipes by Category</a>
                     </li>
+                </ul>
                     {% endif %}
                     <!-- Add post or category if user is superuser -->
                     {% if user.is_superuser %}
@@ -94,7 +96,7 @@
                     <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                         href="{% url 'account_login' %}">Login</a>
                 </li>
-            </ul>
+              </ul>
                 {% endif %}
             </div>
         </nav>
