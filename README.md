@@ -12,8 +12,8 @@ Table of contents
 3. Features implemented
 4. Features Left to Implement
 5. Technology used
-6. Testing
-7. Bugs
+6. Testing 
+7. Validating, errors and bugs
 8. Deployment
 9. Resources
 10. Credits and acknowledgements
@@ -57,9 +57,37 @@ Table of contents
         Account Authorisation Tests
         Admin Tests
         ??
-7. Bugs
+
+7. Validating, errors and bugs
+
+    ## Validating and errors
+
+    ### HTML
+    I validated my HTML by copying and pasting the "source code" from the app's deployed link. I got some errors pertaining my base.html that I could not fix, indicating that <li> tags in my navbar were not supposed to be under <div> and that there were <a> stray tags. Neverhteless the structure of my html is clean and correct and tryin to change my code according to these error messages caused the links in my navbar to look bad, so I had to change the code back. 
+    ![<a> tag error ](static/images/readme-images/a.tag.error.png)
+    ![<a> tag error ](static/images/readme-images/li.tag.error.png)
+    
+    ## CSS 
+
+    The style.css file came back with no errors.
+    ![CSS validation](static/images/readme-images/css.validation.png)
+
+    ## Python
+
+    The files I have coded in, that is, models.py, urls.py, views.py and admin.py are error free, except a line that is too long in my urls.py. I tried to correct his but then the terminal wouldn't open the browser, even though the Python linter indicated that that was the correct code. 
+    ![Home page AMIRESPONSIVE](static/images/readme-images/amiresponsive-home.png)
+
+
+    ## JS
+
+    The only javascript file in my project, handling the comments, is not coded by me, it is code included in the Code Institute's walkthrough. The JS Hint did not indicate the presence of errors. 
+
+## Bugs
+
 8. Deployment
 9. Resources
+    - Slack
+    - Tutor assistance
 10. Credits and acknowledgements
     - "I think therefore I blog" walkthrough project by Code Institute.
     - Readme inspired in this project : https://github.com/TulaUnogi/cat-beans-cafe/blob/main/README.md
