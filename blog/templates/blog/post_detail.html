@@ -102,7 +102,7 @@
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg btn btn-custom">Submit</button>
                 </form>
                 {% else %}
                 <a href="{% url 'account_login' %}" class="login-link">
