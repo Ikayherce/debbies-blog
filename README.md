@@ -36,6 +36,12 @@ The color palette of beiges and browns has been chosen to convey a simple, clean
 
 # 2. Agile Development
 ## User Stories
+Throughout the development process, Agile methodologies have been applied to ensure adaptability and responsiveness to the evolving project needs. While  planning and creating user stories partially offline since pen and paper work best for me, I have used GitHub's Kanban board for task management and updates, and all the user stories can be found there. This mix of different tools is what has worked best for me to adapt and re-think features during the process of coding this blog. 
+
+Some of the user stories are inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
+See the Kanban board with my user stories [here](https://github.com/users/Ikayherce/projects/4/views/1 )  
+
+
 
 # 3. Features 
 ## Features implemented
@@ -60,13 +66,12 @@ The color palette of beiges and browns has been chosen to convey a simple, clean
 With more time, these would have been, among others, some  good additions to the project. 
 - Password change for users
 - Possibility for users to reply to a comment thread (not just posting new comment but as a reply to a specific comment)
-- Possibility to up- and downvote comments
 - Possibility to assign multiple categories to one post (i.e. cake can be dessert and snack)
-- A save function for users to save favorite recipes
 - Dropdown category menu in navbar implemented in all pages (right now it's not, even though categories are 
     accessible through the category list page from any page)
 - Admin's ability to delete or edit categories from front end
 - Admin's ability to approve or discard comments from front end
+- Subscribing model 
 
 # 4. Technologies used
 - Html - for page structure
