@@ -7,7 +7,7 @@ from ckeditor.fields import RichTextField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
+
 class Category (models.Model):
     name = models.CharField(max_length=200, unique=True)
 

@@ -14,7 +14,7 @@
             {% endif %}
         </div>
         <!-- About Text Column -->
-        <div class="col-md-8 ps-md-3"> <!-- Added ps-md-3 class for padding on the left -->
+        <div class="col-md-8 ps-md-3"> 
             <h2>{{ about.title }}</h2>
             {{ about.content | safe }}
         </div>
@@ -23,18 +23,16 @@
         <!-- Empty Column for Large Screens -->
         <div class="col-md-4 d-none d-md-block"></div>
         <!-- Form Column -->
-        <div class="col-md-8 pb-4"> <!-- Added pb-4 class for padding on the bottom -->
+        <div class="col-md-8 pb-4">
             <h2>Let's collaborate!</h2>
-            <p>I believe in the power of shared knowledge and collective effort. Whether you have a project in mind, wish to co-author an article, or simply want to brainstorm some ideas, I'm excited to hear from you. Fill out the form and we can get the ball rolling!</p>
-
-            <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
+            <p>Do you want to create some kitchen magic together?</p>
             <form method="post">
                 <div class="row">
                     <div class="col-12">
                         {{ collaborate_form | crispy }}
                     </div>
                     <div class="col-12 mt-3">
-                        <button class="btn btn-secondary btn btn-custom" type="submit">Submit</button> <!-- Added btn-custom class -->
+                        <button class="btn btn-secondary btn btn-custom" type="submit">Submit</button>  
                     </div>
                 </div>
                 {% csrf_token %}
