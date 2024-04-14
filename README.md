@@ -1,4 +1,10 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Debbie's Recipe Blog
+
+
+Here's my deployed link https://debbies-blog-9734dd06035e.herokuapp.com/ 
+
+![Home page AMIRESPONSIVE](static/images/readme-images/amiresponsive-home.png)
+
 
 Table of contents
 1. UX
@@ -29,20 +35,20 @@ Table of contents
 3. Features implemented
 4. Features Left to Implement
 5. Technology used
-    Html - for page structure
-    CSS - for custom styling
-    Python - for the backend
-    Javascript - for timeout in messages
-    Django - framework used to build this project
-    Jinja - templating language rendering logic within html documents
-    Bootstrap 5 - front end framework used by me alongside Django, helps with fast and efficient styling
-    Elephant SQL - used as the database
-    Font Awesome - for social media icons
-    Google Fonts- currently only for the hero image font
-    GitHub - for storing the code and for the project's Kanban board
-    Heroku - for hosting and deployement of this project
-    Cloudinary - hosting the static files
-    Git - version control tool  
+    - Html - for page structure
+    - CSS - for custom styling
+    - Python - for the backend
+    - Javascript - for handling comments
+    - Django - framework used to build this blog
+    - Bootstrap 5.01 - front end framework used to style this project 
+    - Elephant SQL - used as the database
+    - Font Awesome - for social media icons
+    - Google Fonts- currently only for the hero image font
+    - GitHub - for storing the code and for the project's Kanban board
+    - Heroku - for hosting and deployement of this project
+    - Cloudinary - hosting the static files
+    - Git - version control tool  
+    - Gitpod - IDE used for building this project
 6. Testing
     Responsiveness
     Manual testing
