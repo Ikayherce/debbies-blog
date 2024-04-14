@@ -66,7 +66,7 @@
                     <a href="{% url 'update_post' slug=post.slug %}" class="btn btn-secondary">Edit</a>
                     <a href="{% url 'delete_post' slug=post.slug %}" class="btn btn-danger">Delete</a>
                     {% endif %}
-                    <hr />
+                    <hr>
                     <p class="card-text text-muted h6 custom-text-color">{{ post.created_on }}</p>
                 </div>
             </div>
@@ -96,7 +96,6 @@
                     <a href="{% url 'update_post' slug=post.slug %}" class="btn btn-secondary">Edit</a>
                     <a href="{% url 'delete_post' slug=post.slug %}" class="btn btn-danger">Delete</a>
                     {% endif %}
-                    <hr />
                     <p class="card-text text-muted h6 custom-text-color">{{ post.created_on }}</p>
                 </div>
             </div>
