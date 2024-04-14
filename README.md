@@ -51,12 +51,35 @@ Table of contents
     - Gitpod - IDE used for building this project
 6. Testing
     Responsiveness
-    Manual testing
+    ## Manual testing
         Account Registration Tests
+        User can create profile	 
+        User can log into profile	 
+        User can log out of profile	 
+
         User Navigation Tests
+        User can easily navigate to individual posts
+        User can easily navigate to category menu	 
+        User can access About page	 
+        User can submit a message in contact form in About page 
+        User can like and unlike posts when registered
+        User can comment on posts when registered
+        Authenticated user can delete and edit their comments 
+        SuperUser can access add new post page, edit and delete post pages, add category page
+
         Account Authorisation Tests
+        Only Superuser can access admin page	 
+        Non authorised user book a table	 
+        Non authorised user won't access profile page	 
+
         Admin Tests
-        ??
+        Items display correctly on front-end when updating post	 
+        Items display correctly on front-end when adding new post	
+        Items display correctly on front-end when deleting post	 
+        Items display correctly on front-end when adding category
+
+ 
+        
 
 7. Validating, errors and bugs
 
@@ -66,7 +89,7 @@ Table of contents
     I validated my HTML by copying and pasting the "source code" from the app's deployed link. I got some errors pertaining my base.html that I could not fix, indicating that <li> tags in my navbar were not supposed to be under <div> and that there were <a> stray tags. Neverhteless the structure of my html is clean and correct and tryin to change my code according to these error messages caused the links in my navbar to look bad, so I had to change the code back. 
     ![<a> tag error ](static/images/readme-images/a.tag.error.png)
     ![<a> tag error ](static/images/readme-images/li.tag.error.png)
-    
+
     ## CSS 
 
     The style.css file came back with no errors.
@@ -75,7 +98,7 @@ Table of contents
     ## Python
 
     The files I have coded in, that is, models.py, urls.py, views.py and admin.py are error free, except a line that is too long in my urls.py. I tried to correct his but then the terminal wouldn't open the browser, even though the Python linter indicated that that was the correct code. 
-    ![Home page AMIRESPONSIVE](static/images/readme-images/amiresponsive-home.png)
+    ![Line too long in urls.py](static/images/readme-images/urls.py.validation.png)
 
 
     ## JS
