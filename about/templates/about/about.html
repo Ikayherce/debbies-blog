@@ -5,42 +5,39 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row">
-        <div class="col-12 col-md-4 text-center">
-        {% if "placeholder" in about.profile_image.url %}
-         <img src="{% static 'images/nobody.jpg' %}" width="75%"
-        alt="placeholder image" >
-        {% else %}
-          <img src="{{ about.profile_image.url }}" width="75%"
-        alt="{{ about.title }}">
-         {% endif %}
+        <!-- Image Column -->
+        <div class="col-md-4 mb-4 text-center">
+            {% if "placeholder" in about.profile_image.url %}
+            <img src="{% static 'images/nobody.jpg' %}" class="img-fluid" alt="placeholder image">
+            {% else %}
+            <img src="{{ about.profile_image.url }}" class="img-fluid" alt="{{ about.title }}">
+            {% endif %}
         </div>
-        <div class="col-12 col-md-8">
+        <!-- About Text Column -->
+        <div class="col-md-8 ps-md-3"> <!-- Added ps-md-3 class for padding on the left -->
             <h2>{{ about.title }}</h2>
             {{ about.content | safe }}
         </div>
     </div>
-    <div class="row">
-        <div class="col text-right">
-          <!-- Updated on field goes in here -->
-    
-          <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
+    <div class="row justify-content-md-center mt-5">
+        <!-- Empty Column for Large Screens -->
+        <div class="col-md-4 d-none d-md-block"></div>
+        <!-- Form Column -->
+        <div class="col-md-8 pb-4"> <!-- Added pb-4 class for padding on the bottom -->
             <h2>Let's collaborate!</h2>
-            <p>I believe in the power of shared knowledge and collective effort.
-                Whether you have a project in mind, wish to co-author
-                an article, or simply want to brainstorm some ideas,
-                I'm excited to hear from you. Fill out the form
-                and we can get the ball rolling!</p>
+            <p>I believe in the power of shared knowledge and collective effort. Whether you have a project in mind, wish to co-author an article, or simply want to brainstorm some ideas, I'm excited to hear from you. Fill out the form and we can get the ball rolling!</p>
 
-            <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
+            <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
             <form method="post">
-                {{ collaborate_form | crispy }}
+                <div class="row">
+                    <div class="col-12">
+                        {{ collaborate_form | crispy }}
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button class="btn btn-secondary btn btn-custom" type="submit">Submit</button> <!-- Added btn-custom class -->
+                    </div>
+                </div>
                 {% csrf_token %}
-                <button class="btn btn-secondary btn btn-custom" type="submit">Submit</button>
             </form>
         </div>
     </div>
