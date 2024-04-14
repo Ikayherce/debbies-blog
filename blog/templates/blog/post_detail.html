@@ -48,7 +48,8 @@
                 {% else %}
                     <button type="submit" class="btn btn-primary btn-lg">Like</button>
                 {% endif %}
-                <p class="total-likes" >Total Likes: {{ post.total_likes }}</p>
+                <p class="total-likes mt-3" style="font-weight: bold;">{{ post.total_likes }} like this post</p>
+
             </form>
         </div>
     </div>
@@ -102,7 +103,7 @@
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg btn btn-custom">Submit</button>
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-sm btn btn-custom">Submit</button>
                 </form>
                 {% else %}
                 <a href="{% url 'account_login' %}" class="login-link">
