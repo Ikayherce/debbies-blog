@@ -47,19 +47,31 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 ## Features implemented
 - Navbar
     - Toggle down in small sizes
+![navbar small screen](static/images/readme-images/feature.navbarsmallscreendropdrown.png)
+![navbar small screen2](static/images/readme-images/feature.smallscreennavbar.png)
+
 - Home page with the latest post highlighted on top
 - Pagination system to navigate the rest of the post list pages
+- Post page for each post with comment field
+- Like count and comment count is displayed
+- Authenticated user can comment, read, delete and update their comments
+![comment field and form](static/images/readme-images/feature.likeunlikecomment.png)
+![edit comment](static/images/readme-images/feature.likeunlikeeditcomment.png)
+![delete comment](static/images/readme-images/feature.deletecomment.png)
+![delete comment](static/images/readme-images/logintocomment.png)
 - About page with collaboration form 
 - Category system to categorize posts
 - Category page (toggle down menu from some of)
 - User can register, log in, and log out
 - Authenticated user can like and unlike posts
-- Authenticated user can comment, read, delete and update their comments
 - Superuser has front end CRUD for posts
-    - Create new post page with rich text field
-    - Edit post page with rich text field
-    - Read posts
-    - Delete posts
+![page seen as admin](static/images/readme-images/adminviewbigscreen.png)
+- Admin can delete posts
+![delete post page](static/images/readme-images/feature.deletepost.png)
+- Admin can edit post page with rich text field
+![edit post page](static/images/readme-images/feature.addnewpost.png)
+- Admin can create new post page with rich text field
+![add post page](static/images/readme-images/feature.update.view.png)
 - Superuser can add new post categories
     
 ## Features Left to Implement
