@@ -8,7 +8,6 @@ from ckeditor.fields import RichTextField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
-#code below is test code for category model
 class Category (models.Model):
     name = models.CharField(max_length=200, unique=True)
 
@@ -17,8 +16,6 @@ class Category (models.Model):
 
     def get_absolute_url(self):                   
         return reverse('home')  
-
-#end of test code for category model
 
 
 class Post(models.Model):
@@ -29,7 +26,6 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     content = RichTextField(blank=True,null=True)
-    #content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
@@ -47,10 +43,8 @@ class Post(models.Model):
         return f"{self.title} | written by {self.author}"
 
     def get_absolute_url(self):   
-        #return reverse('post_detail', kwargs={'slug': self.slug})   #redirect to post                  
-        return reverse('home') #or redirect home?
+        return reverse('home')  
     
-    #test code to generate slug if not specified 
     def save(self, *args, **kwargs):
         if not self.slug:   
             self.slug = slugify(self.title)   
