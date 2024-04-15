@@ -20,13 +20,14 @@ Table of contents
 
 ### Design
 #### Site User
-Debbie's Recipe Blog is a website for people of any age who like to cook and seek inspiration for plant-based recipes. 
+Debbie's Recipe Blog is a website for users of any age who like to cook and seek inspiration for plant-based recipes. Debbie is the imaginary persona who is the owner of this blog, and the author of all the recipes. 
 
 #### Goals for the website
 The goal for the website is to provide plant based recipes in a simple yet visually appealing format, providing the possibility to interact with the author and other users through likes, comments and the collaboration contact form.
  
 #### Wireframes
 See below part of the initial planning for the blog, a simple sketch of the home page, about page and sign up form in different screen sizes.
+
 ![wireframe big screen home](static/images/readme-images/wireframe-bigscreen-home.png)
 ![wireframe big screen about](static/images/readme-images/wireframe-bigscreen-about.png)
 ![wireframe phone screen](static/images/readme-images/wireframe-phonescreen.png)
@@ -36,8 +37,7 @@ The color palette of beiges and browns has been chosen to convey a simple, clean
 
 # 2. Agile Development
 ## User Stories
-Throughout the development process, Agile methodologies have been applied to ensure adaptability and responsiveness to the evolving project needs. While  planning and creating user stories partially offline since pen and paper work best for me, I have used GitHub's Kanban board for task management and updates, and all the user stories can be found there. This mix of different tools is what has worked best for me to adapt and re-think features during the process of coding this blog. 
-Some of the user stories are sourced or inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
+Throughout the development process, Agile methodologies have been applied to ensure adaptability and responsiveness to the evolving project needs. While partially planning and creating user stories offline since pen and paper work best for me, I have used GitHub's Kanban board for task management and updates, and all the user stories can be found there. This mix of different tools is what has worked best for me to adapt and re-think features during the process. Some of the user stories are sourced or inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
 
 See the Kanban board with my user stories [here](https://github.com/users/Ikayherce/projects/4/views/1 )  
 
@@ -49,33 +49,61 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 
 # 3. Features 
 ## Features implemented
-- Navbar (toggle down in small sizes)
+#### - Navbar (toggle down in small sizes)
+###### Note: the dropdown category menu is not displayed in the navbar from all pages, for instance the login and logout and the about page. When that is the case, the user can still access the posts displayed by categories in the category page. See more info below in the categories feature. 
+
+![navbar big screen](static/images/readme-images/feature.bigscreennavbar.png)
+
 ![navbar small screen](static/images/readme-images/feature.navbarsmallscreendropdrown.png)
 
-- Home page with the latest post highlighted on top
-- Pagination system to navigate the rest of the post list pages
-- Post page for each post with comment field
-- Like count and comment count is displayed
-- Authenticated user can comment, read, delete and update their comments
-![comment field and form](static/images/readme-images/feature.likeunlikecomment.png)
-![edit comment](static/images/readme-images/feature.likeunlikeeditcomment.png)
+
+#### - Home page with the latest post highlighted on top
+#### - Pagination system to navigate the rest of the post list pages
+#### - Post page for each post with comment field
+#### - Like count and comment count is displayed
+![comment field and form](static/images/readme-images/feature.likeunlikeeditcomment.png)
+
+#### - Authenticated user can comment, read, delete and update their comments
 ![delete comment](static/images/readme-images/feature.deletecomment.png)
 ![delete comment](static/images/readme-images/logintocomment.png)
-- About page with collaboration form 
-- Category system to categorize posts
-- Category page (toggle down menu from some of)
-- User can register, log in, and log out
-- Authenticated user can like and unlike posts
-- Superuser has front end CRUD for posts
-![page seen as admin](static/images/readme-images/adminviewbigscreen.png)
-- Admin can delete posts
+
+#### - Message displays while awaiting for admin approval of the comment. 
+![awaiting approval](static/images/readme-images/feature.commenteditdeleteapproval.png)
+
+#### - About page with collaboration form 
+![about paget](static/images/readme-images/feature.about.png)
+![collaboration contact form](static/images/readme-images/feature.collab.png)
+
+#### - Category system to categorize posts
+###### Note: the dropdown category menu is not displayed in the navbar from all pages, for instance the login and logout and the about page. When that is the case, the user can still access the posts displayed by categories in the category page.
+![categories](static/images/readme-images/feature.dropdownrecipesbycategory.png)
+![categories](static/images/readme-images/feature.alternativecategoriesnavbar.png)
+
+#### - Category page 
+![categories](static/images/readme-images/feature.categorylistpage.png)
+![categories](static/images/readme-images/feature.categoriespage.png)
+
+#### - User can register, log in, and log out
+![sign in](static/images/readme-images/feature.signinuser.png)
+![sign out](static/images/readme-images/feature.signout.png)
+
+#### - Authenticated user can like and unlike posts
+
+#### - Superuser has front end CRUD for posts
+![page seen as admin](static/images/readme-images/feature.adminviewbigscreen.png)
+![page seen as admin](static/images/readme-images/feature.admincaneditanddelete.png)
+
+#### - Admin can delete posts
 ![delete post page](static/images/readme-images/feature.deletepost.png)
-- Admin can edit post page with rich text field
+
+#### - Admin can edit post page with rich text field
 ![edit post page](static/images/readme-images/feature.addnewpost.png)
-- Admin can create new post page with rich text field
+
+#### - Admin can create new post page with rich text field
 ![add post page](static/images/readme-images/feature.update.view.png)
-- Superuser can add new post categories
-    
+#### - Superuser can add new post categories
+![add category](static/images/readme-images/feature.addcategory.png)    
+
 ## Features Left to Implement
 With more time, these would have been, among others, some  good additions to the project. 
 - Password change for users
@@ -160,8 +188,13 @@ The files I have coded in, that is, models.py, urls.py, views.py and admin.py ar
 ### JS
 The only javascript file in my project, handling the comments, is not coded by me, it is code included in the Code Institute's walkthrough. The JS Hint did not indicate the presence of errors. 
 
+### Rich text field terminal message
+When installing the rich text field CK Editor there were not any issues, but later on I started getting a terminal warning everytime I ran the server, saying that I should upgrade to CK Editor 5 or a paid plan. When I tried to install CK Editor 5 instead, I got another warning saying it wasn't compatible with the version of Django I was using. So I am still using CK Editor, it is not causing any issues so far despite the error message but I might have switched to another rich text field if I had had more time.
+
+![CK Editor terminal message](static/images/readme-images/error-ckeditor.png)
+
 ### Bugs
-Sometimes while inspecting in devtools and looking at middle-sized and smaller screen sizes the container looks funny, but it doesn't happen looking at the website from the phone screen. 
+Sometimes while inspecting in devtools and looking at middle-sized and smaller screen sizes the container looks funny, but it doesn't happen looking at the website from the phone screen. If I had had more time I would have look at this further.
 
 # 7. Deployment
 The steps to deploy this website to Heroku were the steps described in Code Institute's blog walkthrough project, as described below.
