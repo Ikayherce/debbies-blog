@@ -10,8 +10,7 @@ Table of contents
  5. Testing 
  6. Validating, errors and bugs
  7. Deployment
- 8. Resources
- 9. Credits and acknowledgements
+ 8. Resources, credits and acknowledgements
 
 
  # 1. UX
@@ -37,7 +36,7 @@ The color palette of beiges and browns has been chosen to convey a simple, clean
 
 # 2. Agile Development
 ## User Stories
-Throughout the development process, Agile methodologies have been applied to ensure adaptability and responsiveness to the evolving project needs. While partially planning and creating user stories offline since pen and paper work best for me, I have used GitHub's Kanban board for task management and updates, and all the user stories can be found there. This mix of different tools is what has worked best for me to adapt and re-think features during the process. Some of the user stories are sourced or inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
+Throughout the development process, Agile methodologies have been applied to ensure adaptability to the evolving project needs. While partially planning and creating user stories offline since pen and paper work best for me, I have used GitHub's Kanban board for task management and updates, and all the user stories can be found there. This mix of different tools is what has worked best for me to adapt and re-think features during the process. Some of the user stories are sourced or inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
 
 See the Kanban board with my user stories [here](https://github.com/users/Ikayherce/projects/4/views/1 )  
 
@@ -58,14 +57,20 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 
 
 #### - Home page with the latest post highlighted on top
+##### See it in different sizes under "testing responsiveness" 
 #### - Pagination system to navigate the rest of the post list pages
-#### - Post page for each post with comment field
-#### - Like count and comment count is displayed
+![pagination](static/images/readme-images/feature.pagination.png)
+
+
+#### - Post page for each post with comment field and likes displayed for all users
+#### - Authenticated user can like and unlike posts
+
 ![comment field and form](static/images/readme-images/feature.likeunlikeeditcomment.png)
 
 #### - Authenticated user can comment, read, delete and update their comments
+
 ![delete comment](static/images/readme-images/feature.deletecomment.png)
-![delete comment](static/images/readme-images/logintocomment.png)
+![delete comment](static/images/readme-images/feature.logintocomment.png)
 
 #### - Message displays while awaiting for admin approval of the comment. 
 ![awaiting approval](static/images/readme-images/feature.commenteditdeleteapproval.png)
@@ -87,8 +92,6 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 ![sign in](static/images/readme-images/feature.signinuser.png)
 ![sign out](static/images/readme-images/feature.signout.png)
 
-#### - Authenticated user can like and unlike posts
-
 #### - Superuser has front end CRUD for posts
 ![page seen as admin](static/images/readme-images/feature.adminviewbigscreen.png)
 ![page seen as admin](static/images/readme-images/feature.admincaneditanddelete.png)
@@ -106,7 +109,7 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 
 ## Features Left to Implement
 With more time, these would have been, among others, some  good additions to the project. 
-- Password change for users
+- Password change for users on front end
 - Possibility for users to reply to a comment thread (not just posting new comment but as a reply to a specific comment)
 - Possibility to assign multiple categories to one post (i.e. cake can be dessert and snack)
 - Dropdown category menu in navbar implemented in all pages (right now it's not, even though categories are 
@@ -133,7 +136,8 @@ With more time, these would have been, among others, some  good additions to the
 
 # 5. Testing
 ## Reponsiveness
-Responsiveness has been achieved mainly through the use bootstrap classes.
+Responsiveness has been achieved mainly through the use bootstrap classes. See below examples of different pages in all screensizes that I took screenshots of using https://ui.dev/amiresponsive 
+
 ![Home page AMIRESPONSIVE](static/images/readme-images/amiresponsive-home.png)
 ![Home page AMIRESPONSIVE](static/images/readme-images/amiresponsive-about.png)
 ![Home page AMIRESPONSIVE](static/images/readme-images/amiresponsive-postdetail.png)
@@ -146,14 +150,14 @@ Responsiveness has been achieved mainly through the use bootstrap classes.
 - User can log out of profile	 
 
 ### User Navigation Tests - PASSED
-- User can easily navigate to individual posts
-- User can easily navigate to category menu	 
+- User can navigate to individual posts
+- User can navigate to category menu	 
 - User can access About page	 
 - User can submit a message in contact form in About page 
 - User can like and unlike posts when registered
 - User can comment on posts when registered
 - User can access the footer's social media links, which open in a new tab
-- Authenticated user can delete and edit their comments 
+- Authenticated user can delete and edit their comments before they are approved by admin
 - SuperUser can access add new post page, edit and delete post pages, add category page
 
 ### Account Authorisation Tests - PASSED
@@ -172,7 +176,7 @@ Responsiveness has been achieved mainly through the use bootstrap classes.
 ## Validating and errors
 
 ### HTML
-I validated my HTML by copying and pasting the "source code" from the app's deployed link. I got some errors pertaining my base.html that I could not fix, indicating that <li> tags in my navbar were not supposed to be under <div> and that there were "a" stray tags. 
+I validated my HTML by copying and pasting the "source code" from the app's deployed link. I got some errors pertaining my base.html that I could not fix, indicating that "li" tags in my navbar were not supposed to be under "div" and that there were "a" stray tags. 
 Nevertheless, the structure of my html is in principle  correct and trying to change my code according to these error messages caused the links in my navbar to look bad, and showed other errors instead. so I had to change the code back.
 ![<a> tag error ](static/images/readme-images/a.tag.error.png)
 ![<a> tag error ](static/images/readme-images/li.tag.error.png)
@@ -197,7 +201,7 @@ When installing the rich text field CK Editor there were not any issues, but lat
 Sometimes while inspecting in devtools and looking at middle-sized and smaller screen sizes the container looks funny, but it doesn't happen looking at the website from the phone screen. If I had had more time I would have look at this further.
 
 # 7. Deployment
-The steps to deploy this website to Heroku were the steps described in Code Institute's blog walkthrough project, as described below.
+The steps to deploy this website to Heroku were the steps indicated in Code Institute's blog walkthrough project, as described below.
 
 1. Create the Heroku app:
 - Sign up or log in to Heroku.
@@ -206,7 +210,7 @@ The steps to deploy this website to Heroku were the steps described in Code Inst
 - Choose your region - EU.
 - Click "Create App".
 
-2. Set up environment variables:
+2. Set up environment variables (in my case on Gitpod):
 - Create a file named env.py in the top level of your Django app.
 - Import os in env.py.
 - Set necessary environment variables:
@@ -245,7 +249,7 @@ The steps to deploy this website to Heroku were the steps described in Code Inst
 
 # 8. Resources, Credits and acknowledgements
 ### The code
-- "I think therefore I blog" walkthrough project by Code Institute
+- "I think therefore I blog" walkthrough project by Code Institute 
 - Tutorial series 1  https://www.youtube.com/watch?v=k_RY1og4Zj0&list=PLOLrQ9Pn6cawWd-5UZM6CIm0uqFXeBcTd
 - Tutorial series 2 https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy 
 - Tutorial series 3 https://www.youtube.com/watch?v=Mezody4yiXw&list=PLVBKjEIdL9bvCdI4l1Emvbezv10GjUaLk 
