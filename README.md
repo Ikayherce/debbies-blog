@@ -3,14 +3,14 @@
 Deployed link:  https://debbies-blog-9734dd06035e.herokuapp.com/ 
 
 Table of contents
- 1. UX
- 2. Agile Development
- 3. Features 
- 4. Technologies used
- 5. Testing 
- 6. Validating, errors and bugs
- 7. Deployment
- 8. Resources, credits and acknowledgements
+ ### 1. UX
+ ### 2. Agile Development
+ ### 3. Features 
+ ### 4. Technologies used
+ ### 5. Testing 
+ ### 6. Validating, errors and bugs
+ ### 7. Deployment
+ ### 8. Resources, credits and acknowledgements
 
 
  # 1. UX
@@ -57,7 +57,7 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 
 
 #### - Home page with the latest post highlighted on top
-##### See it in different sizes under "testing responsiveness" 
+###### Note: see the home page in different sizes under "testing responsiveness" 
 #### - Pagination system to navigate the rest of the post list pages
 ![pagination](static/images/readme-images/feature.pagination.png)
 
@@ -162,8 +162,8 @@ Responsiveness has been achieved mainly through the use bootstrap classes. See b
 
 ### Account Authorisation Tests - PASSED
 - Only Superuser can access admin page 
-- Only Superuser can access front end admin features: add post, edit post, delete post, add category.
-- Only registered users can like and comment on posts.
+- Only Superuser can access front end admin features: add post, edit post, delete post, add category
+- Only registered users can like and comment on posts
 
 ### Admin Tests - PASSED
 - Items display correctly on front-end when updating post	 
@@ -263,7 +263,5 @@ The steps to deploy this website to Heroku were the steps indicated in Code Inst
 ### The text of the recipes
 - The text of the recipe posts has been created with the assistance of AI (Chat GPT). 
 ### Other resources
-- Slack 
-Fellow students at the Swedish Community channel have helped me with troubleshooting when it comes to bootstrap styles, padding and media queries.
-- Tutor assistance
-Some of Code Institute's tutors have helped identify and solve errors along the process. 
+- Slack: fellow students at the Swedish Community channel have helped me with troubleshooting when it comes to bootstrap styles, padding and media queries.
+- Tutor assistance: some of Code Institute's tutors have helped identify and solve errors along the process. 
