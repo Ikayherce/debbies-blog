@@ -48,12 +48,12 @@
                 {% else %}
                     <button type="submit" class="btn btn-primary btn-lg">Like</button>
                 {% endif %}
-                <p class="total-likes mt-3" style="font-weight: bold;">{{ post.total_likes }} like this post</p>
-
+            {% endif %}
             </form>
+            <p class="total-likes mt-3" style="font-weight: bold;">{{ post.total_likes }} likes</p>
         </div>
     </div>
-     {% endif %}
+     
 
     <!-- Comment Section -->
     <div class="row">
