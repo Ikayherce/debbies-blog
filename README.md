@@ -107,16 +107,28 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 #### - Superuser can add new post categories
 ![add category](static/images/readme-images/feature.addcategory.png)    
 
+### - Admin panel
+![admin panel](static/images/readme-images/features.adminpanel.png)    
+
+#### - Admin can approve comments before they are displayed
+![admin panel comments](static/images/readme-images/features.adminpanelcomment.png)    
+
+#### - Admin can edit or delete categories
+![admin panel categories](static/images/readme-images/features.adminpanelcategories.png)    
+
+#### - Admin can edit the about page and read collaboration requests submitted by users on the about page 
+![admin panel about](static/images/readme-images/features.adminpanelcollab.png)    
+
+
 ## Features Left to Implement
 With more time, these would have been, among others, some  good additions to the project. 
-- Password change for users on front end
+- Password change for users on front end and user e-mail verification upon registration
 - Possibility for users to reply to a comment thread (not just posting new comment but as a reply to a specific comment)
 - Possibility to assign multiple categories to one post (i.e. cake can be dessert and snack)
 - Dropdown category menu in navbar implemented in all pages (right now it's not, even though categories are 
     accessible through the category list page from any page)
-- Admin's ability to delete or edit categories from front end
-- Admin's ability to approve or discard comments from front end
-- Subscribing model 
+- Admin's ability to delete or edit categories, approve comments and read collab requests from front end
+- Subscribing model - possibility for users to get notified when new posts are up
 
 # 4. Technologies used
 - Html - for page structure
