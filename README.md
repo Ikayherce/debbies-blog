@@ -3,14 +3,14 @@
 Deployed link:  https://debbies-blog-9734dd06035e.herokuapp.com/ 
 
 Table of contents
- ### 1. UX
- ### 2. Agile Development
- ### 3. Features 
- ### 4. Technologies used
- ### 5. Testing 
- ### 6. Validating, errors and bugs
- ### 7. Deployment
- ### 8. Resources, credits and acknowledgements
+ 1. UX
+ 2. Agile Development
+ 3. Features 
+ 4. Technologies used
+ 5. Testing 
+ 6. Validating, errors and bugs
+ 7. Deployment
+ 8. Resources, credits and acknowledgements
 
 
  # 1. UX
