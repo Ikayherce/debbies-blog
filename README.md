@@ -1,12 +1,12 @@
 # Debbie's Recipe Blog
 
-Please navigate this website with the deployed link:  https://debbies-blog-9734dd06035e.herokuapp.com/ 
+Deployed link:  https://debbies-blog-9734dd06035e.herokuapp.com/ 
 
 Table of contents
  1. UX
  2. Agile Development
  3. Features 
- 4. Technology used
+ 4. Technologies used
  5. Testing 
  6. Validating, errors and bugs
  7. Deployment
@@ -31,24 +31,26 @@ See below part of the initial planning for the blog, a simple sketch of the home
 ![wireframe big screen about](static/images/readme-images/wireframe-bigscreen-about.png)
 ![wireframe phone screen](static/images/readme-images/wireframe-phonescreen.png)
 
-#### Color palette, fonts
-The color palette of beiges and browns has been chosen to convey a simple, clean but also warm appearance to the blog. The beige and brown tones are a good combination with the colorful recipe pictures. The font has been chosen to give a clean and elegant appearance to the site.
+#### Color palette, font
+The color palette of beiges and browns has been chosen to convey a simple, clean but also warm appearance to the blog. The beige and brown tones are warm but subtle enough that they don't overpower visually together with the colorful recipe pictures. The font, "Raleway", has been chosen to give a clean and elegant appearance to the site.
 
 # 2. Agile Development
 ## User Stories
 Throughout the development process, Agile methodologies have been applied to ensure adaptability and responsiveness to the evolving project needs. While  planning and creating user stories partially offline since pen and paper work best for me, I have used GitHub's Kanban board for task management and updates, and all the user stories can be found there. This mix of different tools is what has worked best for me to adapt and re-think features during the process of coding this blog. 
+Some of the user stories are sourced or inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
 
-Some of the user stories are inspired from Code Institute's own Django walkthrough project, and I progressively added my own as the project took more shape and its needs evolved. 
 See the Kanban board with my user stories [here](https://github.com/users/Ikayherce/projects/4/views/1 )  
 
+![user stories](static/images/readme-images/user-stories.png)
+![user stories](static/images/readme-images/user-stories1.png)
+![user stories](static/images/readme-images/user-stories2.png)
+![user stories](static/images/readme-images/user-stories3.png)
 
 
 # 3. Features 
 ## Features implemented
-- Navbar
-    - Toggle down in small sizes
+- Navbar (toggle down in small sizes)
 ![navbar small screen](static/images/readme-images/feature.navbarsmallscreendropdrown.png)
-![navbar small screen2](static/images/readme-images/feature.smallscreennavbar.png)
 
 - Home page with the latest post highlighted on top
 - Pagination system to navigate the rest of the post list pages
@@ -127,9 +129,9 @@ Responsiveness has been achieved mainly through the use bootstrap classes.
 - SuperUser can access add new post page, edit and delete post pages, add category page
 
 ### Account Authorisation Tests - PASSED
-- Only Superuser can access admin page	 
-- Non authorised user book a table	 
-- Non authorised user won't access profile page	 
+- Only Superuser can access admin page 
+- Only Superuser can access front end admin features: add post, edit post, delete post, add category.
+- Only registered users can like and comment on posts.
 
 ### Admin Tests - PASSED
 - Items display correctly on front-end when updating post	 
@@ -225,6 +227,6 @@ The steps to deploy this website to Heroku were the steps described in Code Inst
 - The text of the recipe posts has been created with the assistance of AI (Chat GPT). 
 ### Other resources
 - Slack 
-Fellow students at the Swedish Community channel have helped me with troubleshooting.
+Fellow students at the Swedish Community channel have helped me with troubleshooting when it comes to bootstrap styles, padding and media queries.
 - Tutor assistance
-Some of Code Institute's tutors have been helpful for identifying and solving bugs and errors. 
+Some of Code Institute's tutors have helped identify and solve errors along the process. 
