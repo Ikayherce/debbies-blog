@@ -82,15 +82,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
 
-#DATABASES = {
-#    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-#}
-
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
-    )
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+#DATABASES = {
+#    'default': dj_database_url.parse(
+#        os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
+#    )
+#}
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io",
