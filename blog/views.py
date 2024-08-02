@@ -7,6 +7,7 @@ from .models import Post, Comment, Category
 from .forms import CommentForm, PostForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 def LikeView(request, slug):
@@ -125,6 +126,7 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+@staff_member_required
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
@@ -137,6 +139,7 @@ class AddPostView(CreateView):
         return context
 
 
+@staff_member_required
 class AddCategoryView(CreateView):
     model = Category
     template_name = 'add_category.html'
@@ -150,6 +153,7 @@ class AddCategoryView(CreateView):
         return context
 
 
+@staff_member_required
 class UpdatePostView(UpdateView):
     model = Post
     form_class = PostForm
@@ -162,6 +166,7 @@ class UpdatePostView(UpdateView):
         return context
 
 
+@staff_member_required
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
