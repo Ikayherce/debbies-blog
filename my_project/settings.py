@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'blog',
     'about',
     'ckeditor',
+    'django_extensions',
 ]
 
 SITE_ID = 1
