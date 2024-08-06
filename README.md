@@ -44,6 +44,8 @@ See the Kanban board with my user stories [here](https://github.com/users/Ikayhe
 ![user stories](static/images/readme-images/user-stories1.png)
 ![user stories](static/images/readme-images/user-stories2.png)
 ![user stories](static/images/readme-images/user-stories3.png)
+![user stories](static/images/readme-images/user-stories4.png)
+
 
 
 # 3. Features 
