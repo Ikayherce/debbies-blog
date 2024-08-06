@@ -9,6 +9,18 @@ from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView, LogoutView
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
+from functools import wraps
+from django.core.exceptions import PermissionDenied
+
+
+def staff_member_required_custom(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.user.is_staff:
+            raise PermissionDenied
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+
 
 
 def LikeView(request, slug):
@@ -127,7 +139,8 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-@method_decorator(staff_member_required, name='dispatch')
+
+@method_decorator(staff_member_required_custom, name='dispatch')
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
@@ -139,7 +152,7 @@ class AddPostView(CreateView):
         context["cat_menu"] = cat_menu
         return context
 
-@method_decorator(staff_member_required, name='dispatch')
+@method_decorator(staff_member_required_custom, name='dispatch')
 class AddCategoryView(CreateView):
     model = Category
     template_name = 'add_category.html'
@@ -151,7 +164,7 @@ class AddCategoryView(CreateView):
         context["cat_menu"] = cat_menu
         return context
 
-@method_decorator(staff_member_required, name='dispatch')
+@method_decorator(staff_member_required_custom, name='dispatch')
 class UpdatePostView(UpdateView):
     model = Post
     form_class = PostForm
@@ -163,7 +176,7 @@ class UpdatePostView(UpdateView):
         context["cat_menu"] = cat_menu
         return context
 
-@method_decorator(staff_member_required, name='dispatch')
+@method_decorator(staff_member_required_custom, name='dispatch')
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
