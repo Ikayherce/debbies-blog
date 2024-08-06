@@ -7,6 +7,7 @@ from .models import Post, Comment, Category
 from .forms import CommentForm, PostForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView, LogoutView
+from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
 
 
@@ -126,7 +127,7 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-@staff_member_required
+@method_decorator(staff_member_required, name='dispatch')
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
@@ -138,8 +139,7 @@ class AddPostView(CreateView):
         context["cat_menu"] = cat_menu
         return context
 
-
-@staff_member_required
+@method_decorator(staff_member_required, name='dispatch')
 class AddCategoryView(CreateView):
     model = Category
     template_name = 'add_category.html'
@@ -147,13 +147,11 @@ class AddCategoryView(CreateView):
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
-        context = super(
-            AddCategoryView, self).get_context_data(*args, **kwargs)
+        context = super(AddCategoryView, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
 
-
-@staff_member_required
+@method_decorator(staff_member_required, name='dispatch')
 class UpdatePostView(UpdateView):
     model = Post
     form_class = PostForm
@@ -165,8 +163,7 @@ class UpdatePostView(UpdateView):
         context["cat_menu"] = cat_menu
         return context
 
-
-@staff_member_required
+@method_decorator(staff_member_required, name='dispatch')
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'

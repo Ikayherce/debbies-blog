@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True                                           
 
-ALLOWED_HOSTS = ['8000-ikayherce-debbiesblog-6l8jg7btuxf.ws-eu110.gitpod.io','.herokuapp.com'
+ALLOWED_HOSTS = ['8000-ikayherce-debbiesblog-6d333zcwz6s.ws.codeinstitute-ide.net','.herokuapp.com'
 ]
 
 # Application definition
@@ -86,15 +86,11 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-#DATABASES = {
-#    'default': dj_database_url.parse(
-#        os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
-#    )
-#}
-
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
+    "https://8000-ikayherce-debbiesblog-6d333zcwz6s.ws.codeinstitute-ide.net",
+
 ]
 
 
