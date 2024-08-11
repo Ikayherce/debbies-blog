@@ -214,52 +214,150 @@ When installing the rich text field CK Editor there were not any issues, but lat
 ### Bugs
 Sometimes while inspecting in devtools and looking at middle-sized and smaller screen sizes the container looks funny, but it doesn't happen looking at the website from the phone screen. If I had had more time I would have look at this further.
 
-# 7. Deployment
-The steps to deploy this website to Heroku were the steps indicated in Code Institute's blog walkthrough project, as described below.
 
-1. Create the Heroku app:
+## Deployment
+
+The steps to deploy this website to Heroku are based on Code Institute's blog walkthrough project, as described below.
+
+### 1. Create the Heroku App:
 - Sign up or log in to Heroku.
-- Go to the Heroku Dashboard and click on "New" -> "Create New App".
+- Go to the Heroku Dashboard and click on **"New"** -> **"Create New App"**.
 - Name your project, in my case "Debbie's Blog".
-- Choose your region - EU.
-- Click "Create App".
+- Choose your region (e.g., EU).
+- Click **"Create App"**.
 
-2. Set up environment variables (in my case on Gitpod):
-- Create a file named env.py in the top level of your Django app.
-- Import os in env.py.
-- Set necessary environment variables:
-- Set the secret key using: os.environ['SECRET_KEY'] = 'your secret key'.
-- For the database variable, use: os.environ['DATABASE_URL'] = 'Paste the database link in here'.
-- In settings.py, replace the value of SECRET_KEY variable with os.environ.get('SECRET_KEY').
-- Change the value of DATABASES variable to: 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")).
+### 2. Set Up Environment Variables:
+- Create a file named `env.py` in the top level of your Django app.
+- Import `os` in `env.py`.
+- Set the necessary environment variables:
+  - Set the secret key using: `os.environ['SECRET_KEY'] = 'your secret key'`.
+  - For the database variable, use: `os.environ['DATABASE_URL'] = 'Paste the database link in here'`.
+- In `settings.py`, replace the value of the `SECRET_KEY` variable with `os.environ.get('SECRET_KEY')`.
+- Change the value of the `DATABASES` variable to:
 
-3. Configure Heroku:
-- Navigate to the "Settings" tab in Heroku.
-- Open the "Config Vars" section and add:
-- DATABASE_URL as Key and the database link from your app's env.py as Value.
-- SECRET_KEY as Key and the secret key value from env.py as Value.
+  ```python
+  'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  ```
 
-4. Migrate models:
-- In the terminal, migrate the models over to the new database connection.
+### 3. Configure Heroku:
+- Navigate to the **"Settings"** tab in Heroku.
+- Open the **"Config Vars"** section and add:
+  - `DATABASE_URL` as Key and the database link from your app's `env.py` as Value.
+  - `SECRET_KEY` as Key and the secret key value from `env.py` as Value.
 
-5. Configure static files:
-- In settings.py, add the following static files settings:
+### 4. Migrate Models:
+- In the terminal, run migrations to apply the models to the new database connection.
 
-![Static files](static/images/readme-images/deployment-staticfiles-screenshot.png)
+### 5. Configure Static Files:
+- In `settings.py`, add the following static files settings:
 
-- Change the templates directory to: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
-- Update the DIRS key in the TEMPLATES variable to look like this: 'DIRS': [TEMPLATES_DIR].
+  ![Static files](static/images/readme-images/deployment-staticfiles-screenshot.png)
 
-6. Update ALLOWED_HOSTS:
-- Add your Heroku app's domain to the ALLOWED_HOSTS list (e.g., your-app-name.herokuapp.com).
+- Change the templates directory to:
 
-7. Create necessary directories and files:
-- If not already done, create top-level folders named static and templates.
-- Create a Procfile with the following content: web: gunicorn PROJECT_NAME.wsgi.
+  ```python
+  TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+  ```
 
-8. Final steps:
+- Update the `DIRS` key in the `TEMPLATES` variable to look like this:
+
+  ```python
+  'DIRS': [TEMPLATES_DIR]
+  ```
+
+### 6. Update ALLOWED_HOSTS:
+- Add your Heroku app's domain to the `ALLOWED_HOSTS` list (e.g., `your-app-name.herokuapp.com`).
+
+### 7. Create Necessary Directories and Files:
+- If not already done, create top-level folders named `static` and `templates`.
+- Create a `Procfile` with the following content:
+
+  ```bash
+  web: gunicorn PROJECT_NAME.wsgi
+  ```
+
+### 8. Final Steps:
 - In the terminal, add the changed files, commit, and push to GitHub.
 
+### Cloning the Application and Running it Locally
+
+To run the application locally, follow the steps below:
+
+1. **Clone the Repository:**
+   - Open your terminal.
+   - Navigate to the directory where you want to clone the project.
+   - Run the following command:
+
+     ```bash
+     git clone https://github.com/your-username/your-repository-name.git
+     ```
+
+2. **Create and Activate a Virtual Environment:**
+   - Navigate to the cloned repository:
+
+     ```bash
+     cd your-repository-name
+     ```
+
+   - Create a virtual environment:
+
+     ```bash
+     python3 -m venv venv
+     ```
+
+   - Activate the virtual environment:
+     - On macOS/Linux:
+
+       ```bash
+       source venv/bin/activate
+       ```
+
+     - On Windows:
+
+       ```bash
+       venv\Scripts\activate
+       ```
+
+3. **Install Dependencies:**
+   - Install the required packages using pip:
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Set Up Environment Variables:**
+   - Create a file named `env.py` in the project directory.
+   - Inside `env.py`, add your environment variables, e.g.:
+
+     ```python
+     import os
+
+     os.environ['SECRET_KEY'] = 'your-secret-key'
+     os.environ['DATABASE_URL'] = 'your-database-url'
+     ```
+
+5. **Apply Migrations:**
+   - Run the following command to apply migrations:
+
+     ```bash
+     python manage.py migrate
+     ```
+
+6. **Run the Application:**
+   - Start the development server:
+
+     ```bash
+     python manage.py runserver
+     ```
+
+   - Open your browser and go to `http://127.0.0.1:8000/` to view the application.
+
+7. **Deactivate the Virtual Environment:**
+   - When you are done, deactivate the virtual environment:
+
+     ```bash
+     deactivate
+     ```
 
 # 8. Resources, Credits and acknowledgements
 ### The code
