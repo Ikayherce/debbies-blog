@@ -200,8 +200,7 @@ The style.css file came back with no errors.
 ![CSS validation](static/images/readme-images/css.validation.png)
 
 ### Python
-The files I have coded in, that is, models.py, urls.py, views.py and admin.py are error free, except a line that is too long in my urls.py. I tried to correct his but then the terminal wouldn't open the browser, even though the Python linter indicated that that was the correct code. 
-![Line too long in urls.py](static/images/readme-images/urls.py.validation.png)
+The files I have coded in, that is, models.py, urls.py, views.py and admin.py are error free.
 
 ### JS
 The only javascript file in my project, handling the comments, is not coded by me, it is code included in the Code Institute's walkthrough. The JS Hint did not indicate the presence of errors. 
